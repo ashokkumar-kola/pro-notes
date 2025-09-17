@@ -1,0 +1,86 @@
+
+# Installation Guide
+
+
+
+npm install react-native-screens react-native-safe-area-context
+
+
+
+
+
+
+---
+
+
+Requirements
+
+    Node.js version 18.18 or higher
+
+    React Native version 0.77 (support for 0.78–0.80 is in progress)
+
+    New architecture enabled (if you are not using the new architecture, 
+    		use react-native-navigation version 7.x.x with React Native 0.73 or lower)  
+    
+    
+---
+
+
+Install with npm
+
+	npm install --save react-native-navigation
+
+Install with yarn
+
+	yarn add react-native-navigation
+	
+	
+---
+
+
+# Automatic linking with rnn-link
+
+	React Native Navigation requires some manual native changes. To automate this process, use the rnn-link script.
+	
+	npx rnn-link
+
+
+
+
+
+
+
+
+
+
+
+
+
+Update index.js 
+
+import { Navigation } from "react-native-navigation";
+
+
++import { Navigation } from "react-native-navigation";
+-import {AppRegistry} from 'react-native';
+import App from "./App";
+-import {name as appName} from './app.json';
+
+-AppRegistry.registerComponent(appName, () => App);
++Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+
++Navigation.events().registerAppLaunchedListener(() => {
++   Navigation.setRoot({
++     root: {
++       stack: {
++         children: [
++           {
++             component: {
++               name: 'com.myApp.WelcomeScreen'
++             }
++           }
++         ]
++       }
++     }
++  });
++});

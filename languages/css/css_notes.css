@@ -1,0 +1,1525 @@
+
+
+/* ==================================================== */
+                    /* SELECTORS  */                    
+/* ==================================================== */
+
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Type (Tag) Selector */
+p {
+    color: blue;
+}
+
+/* Class Selector */
+.my-class {
+    color: red;
+}
+
+/* ID Selector */
+#my-id {
+    font-size: 20px;
+}
+
+/* Grouping Selector */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+/* Descendant Selector */
+.parent p {
+    color: green;
+}
+
+/* Child Selector */
+.parent > p {
+    font-weight: bold;
+}
+
+/* Adjacent Sibling Selector */
+h1 + p {
+    color: orange;
+}
+
+/* General Sibling Selector */
+h1 ~ p {
+    color: purple;
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 1px solid black;
+}
+
+/* Attribute Contains Selector */
+a[href*="example"] {
+    color: blue;
+}
+
+/* Attribute Starts With Selector */
+a[href^="https"] {
+    color: green;
+}
+
+/* Attribute Ends With Selector */
+img[src$=".jpg"] {
+    border-radius: 10px;
+}
+
+/* First Child Selector */
+p:first-child {
+    font-weight: bold;
+}
+
+/* Last Child Selector */
+p:last-child {
+    text-decoration: underline;
+}
+
+/* Nth Child Selector */
+li:nth-child(2) {
+    color: red;
+}
+
+/* Odd & Even Children */
+li:nth-child(odd) {
+    background-color: lightgray;
+}
+li:nth-child(even) {
+    background-color: white;
+}
+
+/* First of Type */
+p:first-of-type {
+    font-style: italic;
+}
+
+/* Last of Type */
+p:last-of-type {
+    text-transform: uppercase;
+}
+
+/* Nth of Type */
+p:nth-of-type(3) {
+    color: blue;
+}
+
+/* Empty Selector */
+div:empty {
+    height: 50px;
+    background-color: yellow;
+}
+
+/* Not Selector */
+p:not(.special) {
+    color: gray;
+}
+
+/* Hover Selector */
+button:hover {
+    background-color: blue;
+}
+
+/* Focus Selector */
+input:focus {
+    border: 2px solid blue;
+}
+
+/* Active Selector */
+a:active {
+    color: red;
+}
+
+/* Checked Selector */
+input[type="checkbox"]:checked {
+    outline: 2px solid green;
+}
+
+/* Disabled Selector */
+input:disabled {
+    background-color: lightgray;
+}
+
+/* Before & After Pseudo-Elements */
+p::before {
+    content: "🔹 ";
+    color: blue;
+}
+p::after {
+    content: " ✔";
+    color: green;
+}
+
+/* Selection Styling */
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+
+/*  ROOT */
+:root {
+    --primary: blue;
+}
+
+
+
+/* COLORS */
+.colors {
+
+    /* Named Colors */
+    /* red green blue alpha */
+
+    /* HEX CODE */
+    /* 
+        #RRGGBB
+        #000000 
+        #FFFFFF
+
+        #RRGGBBAA
+        #00000000 
+        #FFFFFFFF
+    */
+
+    /* RGB & RGBA */
+    /* 
+        rgb(red, green, blue)
+        rgb(0, 0, 0)
+        rgb(255, 255, 255)
+
+        rgb(red, green, blue, alpha)
+        rgba(0, 0, 0, 0)
+        rgba(255, 255, 255, 1)
+    */
+
+
+    /* HSL */
+    /* 
+        hsl(hue, saturation, lightness)
+        hsl(0, 0, 0)
+        hsl(100%, 100%, 100%)
+
+        hsl(hue, saturation, lightness, alpha)
+        hsl(0, 0, 0, 0)
+        hsl(100%, 100%, 100%, 1)
+    */
+}
+
+
+/* ====================================================
+   BACKGROUND PROPERTIES - COMPLETE GUIDE
+==================================================== */
+
+.background {
+    
+    /* Shorthand Property (Combines all background properties) */
+    background: color image position/size repeat attachment origin clip;
+
+    /* Background Image */
+    background-image: value;
+    /*
+        🔹 Single Image: url('image.jpg')
+        🔹 Multiple Images: url('img1.jpg'), url('img2.png')
+        🔹 Gradients:
+           - Linear: linear-gradient(to right, red, blue);
+           - Radial: radial-gradient(circle, red, blue);
+           - Conic: conic-gradient(from 90deg, red, blue);
+    */
+
+    /* Background Size */
+    background-size: value;
+    /*
+        🔹 auto (default) - Keeps original image size.
+        🔹 cover - Covers the entire element, may crop.
+        🔹 contain - Ensures the whole image fits without cropping.
+        🔹 Custom sizes: 100px 200px | 50% 50%.
+    */
+
+    /* Background Position */
+    background-position: x y;
+    /*
+        🔹 Keywords: top left | center center | bottom right.
+        🔹 Pixels: 50px 100px.
+        🔹 Percentage: 50% 50%.
+    */
+
+    /* Background Repeat */
+    background-repeat: value;
+    /*
+        🔹 repeat (default) - Repeats both horizontally & vertically.
+        🔹 repeat-x - Repeats horizontally.
+        🔹 repeat-y - Repeats vertically.
+        🔹 no-repeat - Prevents repeating.
+    */
+
+    /* Background Attachment */
+    background-attachment: value;
+    /*
+        🔹 scroll (default) - Background scrolls with the page.
+        🔹 fixed - Background stays in place.
+        🔹 local - Scrolls within the element.
+    */
+
+    /* Background Clip */
+    background-clip: value;
+    /*
+        🔹 border-box (default) - Extends to the border.
+        🔹 padding-box - Stops at the padding.
+        🔹 content-box - Applies only to the content area.
+    */
+
+    /* Background Origin */
+    background-origin: value;
+    /*
+        🔹 border-box (default) - Starts from the border.
+        🔹 padding-box - Starts from padding.
+        🔹 content-box - Starts from content.
+    */
+
+    /* Background Blend Mode */
+    background-blend-mode: mode;
+    /*
+        🔹 normal (default)
+        🔹 multiply | screen | overlay | darken | lighten
+        🔹 color-dodge | color-burn | difference | exclusion
+    */
+}
+
+
+
+
+/* ====================================================
+   BORDER PROPERTIES - COMPLETE GUIDE
+==================================================== */
+
+.border {
+    
+    /* Shorthand Property (Combines all border properties) */
+    border: width style color;
+    /*
+        🔹 Example: border: 2px solid red;
+        🔹 Combines border-width, border-style, and border-color.
+    */
+
+    /* Border Width */
+    border-width: value;
+    /*
+        🔹 Thin, Medium, Thick (default: medium)
+        🔹 Custom: px, em, rem (e.g., 1px, 2em, 0.5rem)
+    */
+
+    /* Border Style */
+    border-style: value;
+    /*
+        🔹 solid - A continuous solid line.
+        🔹 dashed - A dashed border.
+        🔹 dotted - A dotted border.
+        🔹 double - Two solid lines.
+        🔹 groove - Creates a 3D groove effect.
+        🔹 ridge - Opposite of groove.
+        🔹 inset - Creates an inset effect.
+        🔹 outset - Creates an outset effect.
+        🔹 none - No border (default).
+    */
+
+    /* Border Color */
+    border-color: color;
+    /*
+        🔹 Named Colors: red, blue, green, etc.
+        🔹 Hex: #ff5733
+        🔹 RGB: rgb(255, 87, 51)
+        🔹 RGBA (with transparency): rgba(255, 87, 51, 0.5)
+        🔹 HSL: hsl(9, 100%, 60%)
+        🔹 HSLA: hsla(9, 100%, 60%, 0.5)
+    */
+
+    /* Individual Border Sides */
+    border-top: width style color;
+    border-right: width style color;
+    border-bottom: width style color;
+    border-left: width style color;
+    /*
+        🔹 Example: border-top: 3px dashed blue;
+    */
+
+    /* Border Radius (Rounded Corners) */
+    border-radius: value;
+    /*
+        🔹 px, %, em, rem (e.g., 10px, 50%)
+        🔹 Makes the corners rounded.
+        🔹 Example: border-radius: 10px;
+    */
+
+    /* Individual Border Radius */
+    border-top-left-radius: value;
+    border-top-right-radius: value;
+    border-bottom-right-radius: value;
+    border-bottom-left-radius: value;
+    /*
+        🔹 Example: border-top-left-radius: 15px;
+    */
+
+    /* Border Image */
+    border-image: source slice width outset repeat;
+    /*
+        🔹 Example: border-image: url('border.png') 30 stretch;
+        🔹 Uses an image as a border.
+    */
+
+    /* Border Image Individual Properties */
+    border-image-source: url('border.png');
+    border-image-slice: value; /* Controls how the image is sliced */
+    border-image-width: value; /* Width of the border image */
+    border-image-outset: value; /* Extends beyond border box */
+    border-image-repeat: value; /* repeat, round, stretch */
+}
+
+
+
+/* ====================================================
+   MARGIN PROPERTIES - COMPLETE GUIDE
+==================================================== */
+
+.margin {
+
+    /* Shorthand Property (Combines all margin sides) */
+    margin: top right bottom left;
+    /*
+        🔹 Example: margin: 10px 20px 30px 40px;
+        🔹 Values (clockwise order):
+            - Top: 10px
+            - Right: 20px
+            - Bottom: 30px
+            - Left: 40px
+    */
+
+    /* Margin - Single Value */
+    margin: value;
+    /*
+        🔹 Applies to all four sides.
+        🔹 Example: margin: 15px;
+    */
+
+    /* Margin - Two Values */
+    margin: vertical horizontal;
+    /*
+        🔹 First value = Top & Bottom
+        🔹 Second value = Left & Right
+        🔹 Example: margin: 10px 20px;
+    */
+
+    /* Margin - Three Values */
+    margin: top horizontal bottom;
+    /*
+        🔹 First value = Top
+        🔹 Second value = Left & Right
+        🔹 Third value = Bottom
+        🔹 Example: margin: 10px 20px 30px;
+    */
+
+    /* Individual Margins */
+    margin-top: value;
+    margin-right: value;
+    margin-bottom: value;
+    margin-left: value;
+    /*
+        🔹 Example: margin-top: 20px;
+    */
+
+    /* Auto Margin (Centering Elements) */
+    margin: auto;
+    /*
+        🔹 Horizontally centers a block element.
+        🔹 Only works when a width is set.
+        🔹 Example: 
+            width: 50%;
+            margin: auto;
+    */
+
+    /* Margin - Negative Values */
+    margin: -value;
+    /*
+        🔹 Moves the element closer to surrounding elements.
+        🔹 Example: margin-top: -10px;
+    */
+
+    /* Percentage Margins */
+    margin: percentage;
+    /*
+        🔹 Based on the element’s containing block width.
+        🔹 Example: margin: 10%;
+    */
+
+    /* Zero Margin */
+    margin: 0;
+    /*
+        🔹 Removes all margins.
+        🔹 Example: margin: 0;
+    */
+}
+
+
+
+/* ====================================================
+   PADDING PROPERTIES - COMPLETE GUIDE
+==================================================== */
+
+.padding {
+
+    /* Shorthand Property (Combines all padding sides) */
+    padding: top right bottom left;
+    /*
+        🔹 Example: padding: 10px 20px 30px 40px;
+        🔹 Values (clockwise order):
+            - Top: 10px
+            - Right: 20px
+            - Bottom: 30px
+            - Left: 40px
+    */
+
+    /* Padding - Single Value */
+    padding: value;
+    /*
+        🔹 Applies to all four sides.
+        🔹 Example: padding: 15px;
+    */
+
+    /* Padding - Two Values */
+    padding: vertical horizontal;
+    /*
+        🔹 First value = Top & Bottom
+        🔹 Second value = Left & Right
+        🔹 Example: padding: 10px 20px;
+    */
+
+    /* Padding - Three Values */
+    padding: top horizontal bottom;
+    /*
+        🔹 First value = Top
+        🔹 Second value = Left & Right
+        🔹 Third value = Bottom
+        🔹 Example: padding: 10px 20px 30px;
+    */
+
+    /* Individual Padding */
+    padding-top: value;
+    padding-right: value;
+    padding-bottom: value;
+    padding-left: value;
+    /*
+        🔹 Example: padding-top: 20px;
+    */
+
+    /* Percentage Padding */
+    padding: percentage;
+    /*
+        🔹 Based on the element’s containing block width.
+        🔹 Example: padding: 10%;
+    */
+
+    /* Zero Padding */
+    padding: 0;
+    /*
+        🔹 Removes all padding.
+        🔹 Example: padding: 0;
+    */
+
+    /* ⚠️ Padding & Box Sizing */
+    /*
+        🔹 By default, padding increases the element size.
+        🔹 To include padding inside the element width/height:
+            box-sizing: border-box;
+    */
+}
+
+
+
+/* ====================================================
+   HEIGHT & WIDTH PROPERTIES - COMPLETE GUIDE
+==================================================== */
+
+.dimension {
+
+    /* Width */
+    width: value;
+    /*
+        🔹 px, em, rem, %, vw (viewport width)
+        🔹 Example: width: 200px;
+        🔹 Example: width: 50%; (50% of parent element)
+    */
+
+    /* Height */
+    height: value;
+    /*
+        🔹 px, em, rem, %, vh (viewport height)
+        🔹 Example: height: 100px;
+        🔹 Example: height: 100vh; (Full viewport height)
+    */
+
+    /* Max Width */
+    max-width: value;
+    /*
+        🔹 Prevents the element from exceeding this width.
+        🔹 Example: max-width: 500px;
+    */
+
+    /* Min Width */
+    min-width: value;
+    /*
+        🔹 Ensures the element is at least this width.
+        🔹 Example: min-width: 200px;
+    */
+
+    /* Max Height */
+    max-height: value;
+    /*
+        🔹 Prevents the element from exceeding this height.
+        🔹 Example: max-height: 300px;
+    */
+
+    /* Min Height */
+    min-height: value;
+    /*
+        🔹 Ensures the element is at least this height.
+        🔹 Example: min-height: 100px;
+    */
+
+    /* Auto Width & Height */
+    width: auto;
+    height: auto;
+    /*
+        🔹 The default value.
+        🔹 Adapts to content size.
+    */
+
+    /* Fit Content */
+    width: fit-content;
+    height: fit-content;
+    /*
+        🔹 Adjusts size based on content.
+        🔹 Example: width: fit-content;
+    */
+
+    /* Inherit */
+    width: inherit;
+    height: inherit;
+    /*
+        🔹 Inherits the value from the parent element.
+    */
+
+    /* Box Sizing (Affects width & height behavior) */
+    box-sizing: content-box;  /* (default) Width & height exclude padding & border */
+    box-sizing: border-box;  /* Width & height include padding & border */
+}
+
+
+
+
+
+
+/* ====================================================
+   DISPLAY PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.display {
+
+    /* Default Display */
+    display: value;
+    /*
+        🔹 Determines how an element is displayed.
+        🔹 Example: display: block;
+    */
+
+    /* Block Elements */
+    display: block;
+    /*
+        🔹 Starts on a new line.
+        🔹 Takes full width of parent.
+        🔹 Example: <div>, <p>, <section>, <article>.
+    */
+
+    /* Inline Elements */
+    display: inline;
+    /*
+        🔹 Stays in the same line.
+        🔹 Takes only as much width as needed.
+        🔹 Example: <span>, <a>, <strong>.
+    */
+
+    /* Inline Block */
+    display: inline-block;
+    /*
+        🔹 Behaves like an inline element but allows setting width & height.
+        🔹 Example: Used for buttons & menu items.
+    */
+
+    /* None (Hides Element) */
+    display: none;
+    /*
+        🔹 Completely removes element from layout.
+        🔹 Example: display: none; (Element is hidden)
+    */
+
+    /* Flexbox */
+    display: flex;
+    /*
+        🔹 Enables flexible box layout.
+        🔹 Example: Used for centering & alignment.
+    */
+
+    /* Grid */
+    display: grid;
+    /*
+        🔹 Enables CSS grid layout.
+        🔹 Example: Used for structured layouts.
+    */
+
+    /* Inline Flex */
+    display: inline-flex;
+    /*
+        🔹 Behaves like flex but stays inline.
+    */
+
+    /* Inline Grid */
+    display: inline-grid;
+    /*
+        🔹 Behaves like grid but stays inline.
+    */cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* Table Display */
+    display: table;
+    /*
+        🔹 Makes an element behave like a table.
+        🔹 Other values:
+            - table-row
+            - table-cell
+            - table-caption
+    */
+
+    /* Contents */
+    display: contents;
+    /*
+        🔹 Removes element but keeps children in DOM.
+    */
+
+    /* List Item */
+    display: list-item;
+    /*
+        🔹 Makes an element behave like a list item.
+        🔹 Example: Used for <li>.
+    */
+}
+
+
+
+
+/* ====================================================
+   POSITION PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.position {
+
+    /* Default Position */
+    position: value;
+    /*
+        🔹 Defines how an element is positioned in the document.
+        🔹 Example: position: relative;
+    */
+
+    /* Static (Default) */
+    position: static;
+    /*
+        🔹 The default value.
+        🔹 The element follows normal document flow.
+        🔹 Example: No special positioning applied.
+    */
+
+    /* Relative */
+    position: relative;
+    /*
+        🔹 The element moves relative to its normal position.
+        🔹 Uses: top, right, bottom, left.
+        🔹 Example: position: relative; top: 10px; (Moves 10px down)
+    */
+
+    /* Absolute */
+    position: absolute;
+    /*
+        🔹 The element is removed from normal document flow.
+        🔹 Positioned relative to the nearest positioned ancestor (non-static).
+        🔹 If no positioned ancestor, it moves relative to <html>.
+    */
+
+    /* Fixed */
+    position: fixed;
+    /*
+        🔹 The element stays fixed on the screen (does not scroll).
+        🔹 Positioned relative to the viewport.
+        🔹 Example: Used for sticky headers & floating buttons.
+    */
+
+    /* Sticky */
+    position: sticky;
+    /*
+        🔹 The element acts like relative until a scroll threshold is met.
+        🔹 Sticks to the top when scrolling past it.
+        🔹 Requires: top, right, bottom, or left.
+    */
+
+    /* Position Offsets */
+    top: value;      /* Moves element down */
+    right: value;    /* Moves element left */
+    bottom: value;   /* Moves element up */
+    left: value;     /* Moves element right */
+    /*
+        🔹 Works with relative, absolute, fixed, and sticky.
+        🔹 Example: position: absolute; top: 50px; left: 100px;
+    */
+
+    /* Z-Index (Layer Order) */
+    z-index: value;
+    /*
+        🔹 Controls stacking order.
+        🔹 Higher values appear above lower ones.
+        🔹 Example: z-index: 10; (Higher = on top)
+    */
+}
+
+
+
+/* ====================================================
+   BOX SHADOW PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.box-shadow {
+
+    /* Shorthand Property */
+    box-shadow: x-offset y-offset blur spread color inset;
+    /*
+        🔹 x-offset → Moves shadow horizontally (left/right).
+        🔹 y-offset → Moves shadow vertically (up/down).
+        🔹 blur → Softens the shadow edges.
+        🔹 spread → Expands or contracts shadow size.
+        🔹 color → Defines the shadow color.
+        🔹 inset → (Optional) Moves shadow inside the element.
+    */
+
+    /* Basic Shadow */
+    box-shadow: 10px 10px 20px gray;
+    /*
+        🔹 Moves right 10px, down 10px.
+        🔹 Blurred by 20px.
+        🔹 Color: gray.
+    */
+
+    /* Multiple Shadows */
+    box-shadow: 5px 5px 10px red, -5px -5px 10px blue;
+    /*
+        🔹 First shadow: 5px right, 5px down, 10px blur, red.
+        🔹 Second shadow: 5px left, 5px up, 10px blur, blue.
+    */
+
+    /* No Blur & No Spread */
+    box-shadow: 5px 5px 0px black;
+    /*
+        🔹 Sharp-edged shadow.
+    */
+
+    /* Inner Shadow */
+    box-shadow: inset 10px 10px 20px gray;
+    /*
+        🔹 Moves inside the element.
+    */
+
+    /* Transparent Shadow */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    /*
+        🔹 rgba() allows transparency.
+        🔹 0.5 = 50% opacity.
+    */
+
+    /* No Shadow */
+    box-shadow: none;
+    /*
+        🔹 Removes the shadow.
+    */
+}
+
+
+
+/* ====================================================
+   TEXT SHADOW PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.text-shadow {
+
+    /* Shorthand Property */
+    text-shadow: x-offset y-offset blur color;
+    /*
+        🔹 x-offset → Moves shadow horizontally (left/right).
+        🔹 y-offset → Moves shadow vertically (up/down).
+        🔹 blur → Softens the shadow edges.
+        🔹 color → Defines the shadow color.
+    */
+
+    /* Basic Shadow */
+    text-shadow: 2px 2px 5px gray;
+    /*
+        🔹 Moves right 2px, down 2px.
+        🔹 Blurred by 5px.
+        🔹 Color: gray.
+    */
+
+    /* No Blur Effect */
+    text-shadow: 3px 3px 0px black;
+    /*
+        🔹 Creates a sharp-edged shadow.
+    */
+
+    /* Multiple Shadows */
+    text-shadow: 2px 2px 4px red, -2px -2px 4px blue;
+    /*
+        🔹 First shadow: 2px right, 2px down, 4px blur, red.
+        🔹 Second shadow: 2px left, 2px up, 4px blur, blue.
+    */
+
+    /* Neon Glow Effect */
+    text-shadow: 0px 0px 10px cyan, 0px 0px 20px blue;
+    /*
+        🔹 Creates a glowing effect.
+    */
+
+    /* Embossed Effect */
+    text-shadow: 1px 1px 0px black, -1px -1px 0px white;
+    /*
+        🔹 Creates a 3D effect.
+    */
+
+    /* Transparent Shadow */
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    /*
+        🔹 rgba() allows transparency.
+        🔹 0.5 = 50% opacity.
+    */
+
+    /* No Shadow */
+    text-shadow: none;
+    /*
+        🔹 Removes the shadow.
+    */
+}
+
+
+
+
+
+/* ====================================================
+   TRANSITION PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.transition {
+
+    /* Shorthand Property */
+    transition: property duration timing-function delay;
+    /*
+        🔹 property → CSS property to animate (e.g., all, width, background).
+        🔹 duration → Time for transition (e.g., 0.5s, 300ms).
+        🔹 timing-function → Controls animation speed (ease, linear, etc.).
+        🔹 delay → Delay before transition starts.
+    */
+
+    /* Basic Transition */
+    transition: all 0.5s ease-in-out;
+    /*
+        🔹 Applies to all properties.
+        🔹 Duration: 0.5 seconds.
+        🔹 Eases in and out smoothly.
+    */
+
+    /* Specific Property */
+    transition: background-color 0.3s ease, transform 0.5s ease-in;
+    /*
+        🔹 First: background-color changes in 0.3s with ease.
+        🔹 Second: transform changes in 0.5s with ease-in.
+    */
+
+    /* Timing Functions */
+    transition-timing-function: ease;        /* Default, smooth */
+    transition-timing-function: linear;      /* Constant speed */
+    transition-timing-function: ease-in;     /* Slow start, fast end */
+    transition-timing-function: ease-out;    /* Fast start, slow end */
+    transition-timing-function: ease-in-out; /* Smooth start & end */
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    /*
+        🔹 Custom cubic-bezier() for precise control.
+    */
+
+    /* Transition Delay */
+    transition-delay: 0.2s;
+    /*
+        🔹 Waits 0.2s before starting.
+    */ 
+
+    /* No Transition */
+    transition: none;
+    /*
+        🔹 Disables transitions.
+    */
+}
+
+
+
+
+
+/* ====================================================
+   ANIMATION PROPERTY - COMPLETE GUIDE
+==================================================== */
+
+.animation {
+
+    /* Shorthand Property */
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    /*
+        🔹 name → Name of the @keyframes animation.
+        🔹 duration → Time for animation (e.g., 2s, 500ms).
+        🔹 timing-function → Speed control (ease, linear, etc.).
+        🔹 delay → Wait time before starting.
+        🔹 iteration-count → Number of loops (e.g., infinite, 3).
+        🔹 direction → Normal, reverse, alternate.
+        🔹 fill-mode → Determines final state after animation.
+    */
+
+    /* Basic Animation */
+    animation: slide 2s ease-in-out infinite alternate;
+    /*
+        🔹 Runs "slide" animation for 2s, loops infinitely.
+        🔹 Smooth start & end, alternates direction.
+    */
+
+    /* Animation Name */
+    animation-name: bounce;
+    /*
+        🔹 Calls @keyframes bounce.
+    */
+
+    /* Duration */
+    animation-duration: 3s;
+    /*
+        🔹 Takes 3 seconds to complete.
+    */
+
+    /* Timing Functions */
+    animation-timing-function: ease;        /* Smooth animation */
+    animation-timing-function: linear;      /* Constant speed */
+    animation-timing-function: ease-in;     /* Slow start */
+    animation-timing-function: ease-out;    /* Slow end */
+    animation-timing-function: ease-in-out; /* Smooth start & end */
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    /*
+        🔹 Custom cubic-bezier() for precise control.
+    */
+
+    /* Delay */
+    animation-delay: 1s;
+    /*
+        🔹 Starts after 1 second.
+    */
+
+    /* Iteration Count */
+    animation-iteration-count: infinite;
+    /*
+        🔹 Runs forever.
+        🔹 Other values: 1, 2, 5 (number of repeats).
+    */
+
+    /* Direction */
+    animation-direction: alternate;
+    /*
+        🔹 normal → Default direction.
+        🔹 reverse → Plays backward.
+        🔹 alternate → Switches direction every cycle.
+        🔹 alternate-reverse → Reverse alternate.
+    */
+
+    /* Fill Mode */
+    animation-fill-mode: forwards;
+    /*
+        🔹 none → Default, resets after animation.
+        🔹 forwards → Keeps last frame.
+        🔹 backwards → Applies first frame before starting.
+        🔹 both → Applies both start & end states.
+    */
+
+    /* Play State */
+    animation-play-state: paused;
+    /*
+        🔹 running → Default, plays animation.
+        🔹 paused → Stops animation at current frame.
+    */
+}
+
+/* Defining Keyframes */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+/* Multiple Keyframes Example */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+
+/* ====================================================
+   @MEDIA (MEDIA QUERIES) - COMPLETE GUIDE
+==================================================== */
+
+/* Basic Syntax */
+@media (condition) {
+    /* CSS rules */
+}
+/*
+    🔹 Used to apply styles based on screen size, resolution, or device.
+    🔹 Helps in making websites responsive.
+*/
+
+/* Example: Apply styles only on screens wider than 768px */
+@media (min-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* Common Conditions */
+
+/* Max Width (Mobile-first) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+/*
+    🔹 Applies when screen width is 600px or smaller.
+    🔹 Used for mobile-responsive design.
+*/
+
+/* Min Width (Desktop-first) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+}
+/*
+    🔹 Applies when screen width is 1024px or larger.
+*/
+
+/* Range (Between Two Sizes) */
+@media (min-width: 600px) and (max-width: 1200px) {
+    body {
+        background-color: yellow;
+    }
+}
+/*
+    🔹 Applies only when screen width is between 600px and 1200px.
+*/
+
+/* Orientation */
+@media (orientation: landscape) {
+    body {
+        background-color: green;
+    }
+}
+/*
+    🔹 Applies only when the screen is in landscape mode.
+*/
+
+/* Device Pixel Ratio (Retina Screens) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        background-image: url('high-res.png');
+    }
+}
+/*
+    🔹 Applies styles for high-resolution screens (Retina, 4K).
+*/
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
+/*
+    🔹 Applies when the user prefers dark mode.
+*/
+
+/* Multiple Media Queries */
+@media (max-width: 500px), (min-width: 1000px) {
+    body {
+        background-color: pink;
+    }
+}
+/*
+    🔹 Applies styles when width is ≤ 500px or ≥ 1000px.
+*/
+
+
+
+/* ====================================================
+   FLEXBOX - COMPLETE GUIDE
+==================================================== */
+
+.flexbox-container {
+    
+    /* Enable Flexbox */
+    display: flex;
+    /*
+        🔹 Makes the element a flex container.
+        🔹 Child elements become flex items.
+    */
+
+    /* Flex Direction */
+    flex-direction: row;
+    /*
+        🔹 row (default) → Items in a row (left to right).
+        🔹 row-reverse → Items in a reversed row.
+        🔹 column → Items in a column (top to bottom).
+        🔹 column-reverse → Items in a reversed column.
+    */
+
+    /* Flex Wrap */
+    flex-wrap: nowrap;
+    /*
+        🔹 nowrap (default) → Items stay in one line.
+        🔹 wrap → Items wrap to next line if needed.
+        🔹 wrap-reverse → Items wrap in reverse order.
+    */
+
+    /* Flex Flow (Shorthand for direction + wrap) */
+    flex-flow: row wrap;
+    /*
+        🔹 row wrap → Items in a row and wrap if needed.
+    */
+
+    /* Justify Content (Main Axis Alignment) */
+    justify-content: flex-start;
+    /*
+        🔹 flex-start (default) → Items start from left (or top in column).
+        🔹 flex-end → Items align to the right (or bottom in column).
+        🔹 center → Items center along the main axis.
+        🔹 space-between → Items spread out, first and last at edges.
+        🔹 space-around → Equal space around items.
+        🔹 space-evenly → Even space between items.
+    */
+
+    /* Align Items (Cross Axis Alignment) */
+    align-items: stretch;
+    /*
+        🔹 stretch (default) → Items stretch to fill container.
+        🔹 flex-start → Items align at the start.
+        🔹 flex-end → Items align at the end.
+        🔹 center → Items align to the center.
+        🔹 baseline → Items align based on text baseline.
+    */
+
+    /* Align Content (Multi-Line Alignment) */
+    align-content: stretch;
+    /*
+        🔹 Only applies when flex-wrap: wrap;
+        🔹 stretch (default) → Rows stretch to fill space.
+        🔹 flex-start → Rows align to start.
+        🔹 flex-end → Rows align to end.
+        🔹 center → Rows align in the center.
+        🔹 space-between → Rows spread out.
+        🔹 space-around → Equal space around rows.
+    */
+}
+
+/* Flex Items (Inside Flex Container) */
+.flexbox-item {
+
+    /* Grow (Expands to Fill Available Space) */
+    flex-grow: 1;
+    /*
+        🔹 Default is 0 (does not grow).
+        🔹 1 → Grows to fill remaining space.
+        🔹 Higher values grow more compared to others.
+    */
+
+    /* Shrink (Controls Shrinking) */
+    flex-shrink: 1;
+    /*
+        🔹 Default is 1 (shrinks if needed).
+        🔹 0 → Prevents shrinking.
+        🔹 Higher values shrink more.
+    */
+
+    /* Basis (Initial Size Before Growing/Shrinking) */
+    flex-basis: auto;
+    /*
+        🔹 auto (default) → Uses item's natural size.
+        🔹 px, %, rem → Defines a fixed size.
+    */
+
+    /* Shorthand for Grow, Shrink & Basis */
+    flex: 1 1 auto;
+    /*
+        🔹 flex-grow: 1 → Can grow.
+        🔹 flex-shrink: 1 → Can shrink.
+        🔹 flex-basis: auto → Uses natural size.
+    */
+
+    /* Self Alignment (Overrides Parent Alignment) */
+    align-self: auto;
+    /*
+        🔹 auto (default) → Follows align-items.
+        🔹 flex-start → Aligns at the start.
+        🔹 flex-end → Aligns at the end.
+        🔹 center → Centers item.
+        🔹 stretch → Stretches item.
+        🔹 baseline → Aligns to text baseline.
+    */
+}
+
+
+
+
+
+/* ====================================================
+   GRID - COMPLETE GUIDE
+==================================================== */
+
+.grid-container {
+    
+    /* Enable Grid */
+    display: grid;
+    /*
+        🔹 Turns the element into a grid container.
+        🔹 Direct children become grid items.
+    */
+
+    /* Define Columns */
+    grid-template-columns: 100px 200px auto;
+    /*
+        🔹 Creates three columns.
+        🔹 First column → 100px wide.
+        🔹 Second column → 200px wide.
+        🔹 Third column → Auto (fills remaining space).
+    */
+
+    /* Define Rows */
+    grid-template-rows: 100px auto 50px;
+    /*
+        🔹 Creates three rows.
+        🔹 First row → 100px high.
+        🔹 Second row → Auto (fills remaining space).
+        🔹 Third row → 50px high.
+    */
+
+    /* Shorthand (Columns & Rows) */
+    grid-template: 100px auto 50px / 100px 200px auto;
+    /*
+        🔹 First part → Defines rows.
+        🔹 Second part → Defines columns.
+    */
+
+    /* Repeat Function */
+    grid-template-columns: repeat(3, 1fr);
+    /*
+        🔹 Creates 3 equal columns.
+        🔹 "1fr" means each takes equal space.
+    */
+
+    /* Minmax Function */
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    /*
+        🔹 Each column is at least 100px, but grows equally.
+    */
+
+    /* Auto-fit & Auto-fill */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /*
+        🔹 Adjusts number of columns based on container size.
+    */
+
+    /* Gap (Spacing Between Items) */
+    gap: 10px;
+    /*
+        🔹 Adds space between rows & columns.
+        🔹 "row-gap" and "column-gap" can be set separately.
+    */
+
+    /* Grid Alignment */
+    justify-items: center;
+    /*
+        🔹 Aligns items horizontally inside grid cells.
+        🔹 Options: start | center | end | stretch (default).
+    */
+
+    align-items: stretch;
+    /*
+        🔹 Aligns items vertically inside grid cells.
+        🔹 Options: start | center | end | stretch.
+    */
+
+    justify-content: center;
+    /*
+        🔹 Aligns entire grid horizontally.
+        🔹 Options: start | center | end | space-between | space-around | space-evenly.
+    */
+
+    align-content: center;
+    /*
+        🔹 Aligns entire grid vertically.
+        🔹 Options: start | center | end | space-between | space-around | space-evenly.
+    */
+}
+
+/* Grid Item Properties */
+.grid-item {
+    
+    /* Position in Grid */
+    grid-column: 1 / 3;
+    /*
+        🔹 Starts at column 1, ends before column 3.
+    */
+
+    grid-row: 2 / 4;
+    /*
+        🔹 Starts at row 2, ends before row 4.
+    */
+
+    /* Span Multiple Columns */
+    grid-column: span 2;
+    /*
+        🔹 Takes up 2 columns.
+    */
+
+    /* Span Multiple Rows */
+    grid-row: span 2;
+    /*
+        🔹 Takes up 2 rows.
+    */
+
+    /* Place Items */
+    place-self: center;
+    /*
+        🔹 Combines "align-self" & "justify-self".
+        🔹 Options: start | center | end | stretch.
+    */
+}
+
+/* Named Areas */
+.grid-layout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 200px auto;
+    grid-template-rows: 60px auto 50px;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer { grid-area: footer; }
+
+
+
+
+
+
+
+/* ====================================================
+   GRADIENTS - COMPLETE GUIDE
+==================================================== */
+
+.gradient {
+
+    /* Linear Gradient (Shorthand) */
+    background: linear-gradient(to right, red, blue);
+    /*
+        🔹 Creates a smooth transition from red to blue.
+        🔹 "to right" → Direction (left → right).
+        🔹 Other directions: to left, to top, to bottom.
+    */
+
+    /* Linear Gradient (Angle) */
+    background: linear-gradient(45deg, red, blue);
+    /*
+        🔹 45deg → Angle of gradient.
+        🔹 0deg → Top to bottom.
+        🔹 90deg → Left to right.
+        🔹 180deg → Bottom to top.
+    */
+
+    /* Linear Gradient (Multiple Colors) */
+    background: linear-gradient(to right, red, yellow, green, blue);
+    /*
+        🔹 Smooth transition between multiple colors.
+    */
+
+    /* Linear Gradient (Hard Color Stops) */
+    background: linear-gradient(to right, red 25%, yellow 50%, green 75%);
+    /*
+        🔹 Controls where colors start/end.
+        🔹 Red occupies first 25%, yellow from 25% to 50%, etc.
+    */
+
+    /* Radial Gradient (Circular) */
+    background: radial-gradient(circle, red, blue);
+    /*
+        🔹 Creates a circular gradient.
+        🔹 Red starts at the center, fades into blue.
+    */
+
+    /* Radial Gradient (Elliptical) */
+    background: radial-gradient(ellipse, red, blue);
+    /*
+        🔹 Creates an elliptical gradient.
+    */
+
+    /* Radial Gradient (Custom Size) */
+    background: radial-gradient(circle at top left, red, blue);
+    /*
+        🔹 "at top left" → Changes gradient starting point.
+        🔹 Other values: center (default), bottom right, etc.
+    */
+
+    /* Conic Gradient */
+    background: conic-gradient(from 0deg, red, yellow, green, blue);
+    /*
+        🔹 Colors rotate around a central point.
+        🔹 "from 0deg" → Starting angle.
+    */
+
+    /* Conic Gradient (Segmented) */
+    background: conic-gradient(red 0deg 90deg, yellow 90deg 180deg, blue 180deg 270deg, green 270deg 360deg);
+    /*
+        🔹 Creates a pie chart-like effect.
+        🔹 Colors defined with specific angles.
+    */
+
+    /* Repeating Linear Gradient */
+    background: repeating-linear-gradient(45deg, red, yellow 10%, green 20%);
+    /*
+        🔹 Repeats gradient pattern.
+        🔹 Every 20% the colors repeat.
+    */
+
+    /* Repeating Radial Gradient */
+    background: repeating-radial-gradient(circle, red, yellow 10%, green 20%);
+    /*
+        🔹 Repeats a radial gradient pattern.
+    */
+}

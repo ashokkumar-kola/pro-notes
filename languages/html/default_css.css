@@ -1,0 +1,259 @@
+
+/* DEFAULT STYLES */
+
+/* 1️⃣ Text & Inline Elements
+
+📌 These elements affect inline text content and formatting. */
+
+a {
+    color: -internal-link-color;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+i, em {
+    font-style: italic;
+}
+
+u, ins {
+    text-decoration: underline;
+}
+
+s, del {
+    text-decoration: line-through;
+}
+
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+small {
+    font-size: smaller;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+code, kbd, samp, pre {
+    font-family: monospace;
+}
+
+pre {
+    white-space: pre;
+}
+
+
+
+/* 2️⃣ Block Elements
+
+📌 These elements start on a new line and take up the full width. */
+
+p {
+    margin: 1em 0;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.75em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 0.83em 0;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1.12em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    font-weight: bold;
+    margin: 1.5em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    font-weight: bold;
+    margin: 1.67em 0;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+address {
+    font-style: italic;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: none;
+    background-color: gray;
+    margin: 0.5em 0;
+}
+
+
+/* 3️⃣ Lists & Table Elements
+
+📌 List and table structure elements. */
+
+ul, menu {
+    display: block;
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    padding-left: 40px;
+}
+
+li {
+    display: list-item;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+th {
+    font-weight: bold;
+    text-align: center;
+}
+
+td, th {
+    padding: 0.5em;
+    border: 1px solid gray;
+}
+
+caption {
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+
+/* 4️⃣ Forms & Inputs
+
+📌 Default styles for form elements. */
+
+input, select, textarea, button {
+    font: inherit;
+    margin: 0;
+}
+
+input {
+    padding: 1px;
+    border: 1px solid #a9a9a9;
+}
+
+button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+    padding: 2px;
+    border: 1px solid #a9a9a9;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    font-weight: bold;
+}
+
+
+/* 5️⃣ Multimedia Elements
+
+📌 Elements that handle images, videos, and audio. */
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+audio, video {
+    display: inline-block;
+}
+
+
+/* 6️⃣ Interactive Elements
+
+📌 Elements that add interactivity like details and summary. */
+
+details {
+    display: block;
+}
+
+summary {
+    display: block;
+    cursor: pointer;
+}
+
+
+/* 7️⃣ Special & Metadata Elements
+
+📌 Elements that serve as containers or provide metadata. */
+
+html {
+    display: block;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+div {
+    display: block;
+}
+
+span {
+    display: inline;
+}
+
+section, article, aside, header, footer, nav {
+    display: block;
+}
+
+iframe {
+    border: none;
+}
+

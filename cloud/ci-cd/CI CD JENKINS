@@ -1,0 +1,94 @@
+
+
+Jenkins 
+
+Build 
+Test 
+Deploy
+
+
+
+Source Code Management
+
+Build Triggers
+
+Build Environment
+
+Build
+
+Post Build Actions
+
+
+
+Master Server
+	- Controls Pipelines
+	- Schedules Builds
+
+Agents/Minions
+	- Perform the Build
+	
+
+	- Commit Triggers Pipeline
+		- Agent Selected based on Configured Labels
+			- Agents Run Build
+			
+
+Agent Types
+
+	- Permanent Agents
+		- Dedicated servers for Running Jobs
+	
+	- Cloud Agents
+		- Ephemeral/Dynamic Agents spun up on demand
+		
+	- Ex:
+		- Kubernetes
+		- Docker
+		- AWS
+		
+		- Kubernetes plugin for Jenkins
+			- To run dynamic agents
+			
+		- ec2 fleet plugin
+			- Automatic Scaling of EC2 Instances
+			
+			
+Build Types
+
+	- Simplest method to create a build
+	- Feels like shell scripting
+	
+Pipelines 
+	
+	- use the Groovy syntex
+	- use stages to break down components of build
+		- Clone, Build, Test, Package, Deploy
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

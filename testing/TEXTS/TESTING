@@ -1,0 +1,238 @@
+
+
+
+
+
+	
+# Black-Box
+
+✔ Equivalence Partitioning  
+✔ Boundary Value Analysis (BVA)  
+✔ Decision Table Testing  
+✔ State Transition Testing  
+✔ Use Case Testing
+
+
+# White-Box
+
+✔ Statement Coverage  
+✔ Branch Coverage  
+✔ Path Coverage  
+✔ Mutation Testing
+
+
+# Gray-Box
+
+✔ Database Testing  
+✔ API Testing  
+✔ Reverse Engineering
+
+	    
+
+
+
+	
+	
+
+CLASSES  
+    - Definition: Blueprint  
+        Used to create objects, contain methods and variables.
+    - Example: WebDriver  
+        WebDriver driver = new ChromeDriver();
+
+INTERFACES  
+    - Definition: Contract  
+        Defines methods without implementation.
+    - Example: JavascriptExecutor  
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+Upcasting - Generalize  
+    Definition: Parent reference refers to child object.  
+    Example in Selenium:  
+        WebDriver driver = new ChromeDriver();  
+        Explanation: ChromeDriver is upcasted to WebDriver.  
+    Purpose: Code becomes flexible and framework-independent.  
+    Example with Interface:  
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+You can use driver to call all methods defined in the WebDriver interface (like get(), findElement(), etc.).
+But you cannot access methods specific to ChromeDriver unless you downcast back.
+It’s done to make the code browser-independent — later you can swap ChromeDriver with FirefoxDriver, EdgeDriver, etc., without changing the rest of the code.
+
+
+
+
+
+
+
+
+Implicit Wait, Explicit Wait, Fluent Wait
+	
+    ✔ Implicit Wait - Global  
+        Sets default wait time for entire session.  
+        Applies to all findElement calls.  
+        Example: driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+    ✔ Explicit Wait - Condition  
+        Waits for a specific condition for a specific element.  
+        Uses WebDriverWait + ExpectedConditions.  
+        Example: WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  
+                 wait.until(ExpectedConditions.visibilityOf(element));
+
+    ✔ Fluent Wait - Flexible  
+        Advanced explicit wait with polling frequency & exception ignoring.  
+        Example:  
+            Wait wait = new FluentWait(driver)  
+                          .withTimeout(30, SECONDS)  
+                          .pollingEvery(5, SECONDS)  
+                          .ignoring(NoSuchElementException.class);
+
+
+
+
+
+
+Assertions
+
+
+
+Bug	
+- A coding error made by a developer. It's the actual mistake in the code.	
+- This term focuses on the cause of the problem (the mistake itself).
+- Instead of 1 TSP of salt, 1 Cup of salt was conveyed
+
+Defect	
+- The manifestation of that error in the application. It's the observed behavior that differs from what was expected.	
+- This term focuses on the effect (what the tester sees and reports).
+- Cake made of 1 Cup of salt
+
+
+✔ How will you confirm a web page is loaded?  
+   - Check: Use ExpectedConditions for title, URL, or element visibility.
+
+✔ What is TestNG?  
+   - Framework: Testing framework inspired by JUnit with advanced features.
+
+✔ TestNG vs JUnit?  
+   - TestNG: More annotations, parallel execution, flexible suite configs.  
+   - JUnit: Simpler, widely used for unit tests.  
+   - Choice: Prefer TestNG for Selenium automation.
+
+✔ How to handle alerts in Selenium?  
+   - Use: driver.switchTo().alert()
+
+✔ How to handle frames in Selenium?  
+   - Use: driver.switchTo().frame()
+
+✔ How to handle multiple windows?  
+   - Use: getWindowHandles(), switchTo().window()
+
+✔ How to capture screenshots?  
+   - Use: TakesScreenshot interface.
+
+✔ How to skip a test in TestNG?  
+   - Use: @Test(enabled = false)
+
+✔ How to run tests in parallel?  
+   - Use: parallel attribute in testng.xml
+
+✔ What is a DataProvider?  
+   - Param: Supplies data to test methods for data-driven testing.
+
+✔ What is Priority in TestNG?  
+   - Order: Controls test execution order.
+
+✔ What is SoftAssert?  
+   - Continue: Allows test to continue after failed assertions.
+
+✔ Difference: HardAssert vs SoftAssert?  
+   - Hard: Stops on failure.  
+   - Soft: Continues, reports at end.
+
+✔ What is Parameterization?  
+   - Reuse: Run same test with multiple data sets.
+
+✔ What is Maven?  
+   - Build: Project build & dependency management tool.
+
+✔ What is POM?  
+   - Model: Page Object Model — design pattern for maintainable locators/actions.
+
+✔ What is headless testing?  
+   - No-UI: Runs browser in background without GUI.
+
+✔ How to run Selenium tests in CI?  
+   - Use: Integrate with Jenkins or any CI/CD tool.
+
+✔ How do you handle dynamic elements?  
+   - Strategy: Use dynamic XPath, CSS, or waits for stable locators.
+
+✔ What is XPath and CSS Selector?  
+   - XPath: XML path syntax for locating elements.  
+   - CSS: Uses styles and hierarchy — faster than XPath.
+
+✔ How do you handle dropdowns?  
+   - Use: Select class for standard dropdowns.
+
+✔ How to validate text on a page?  
+   - Use: getText() or getAttribute() and assert.
+
+✔ What is implicit wait default timeout?  
+   - Zero: No wait unless set.
+
+✔ How to handle SSL certificates?  
+   - Use: DesiredCapabilities for insecure certs.
+
+✔ How do you upload a file?  
+   - SendKeys: sendKeys() to input[type='file'].
+
+✔ How do you download a file?  
+   - Set download directory in browser options.
+
+✔ How do you verify broken links?  
+   - HTTP: Get href, send HTTP request, check response code.
+
+✔ What is cross-browser testing?  
+   - Verify: Test on multiple browsers (Chrome, Firefox, Edge).
+
+✔ How do you run tests on multiple browsers?  
+   - Use: WebDriverManager + parameterization.
+
+✔ What is grid in Selenium?  
+   - Distributed: Run tests on multiple machines/browsers in parallel.
+
+✔ How do you use Selenium Grid?  
+   - Hub-node: Start hub, register nodes, run tests with RemoteWebDriver.
+
+✔ What is Page Factory?  
+   - Model: Optimized Page Object Model with @FindBy and initElements().
+
+✔ How do you handle captchas?  
+   - Manual: Can’t automate — ask devs for test bypass or mock.
+
+✔ How do you test APIs with Selenium?  
+   - Combine: Use REST-assured or HttpClient for backend, Selenium for UI.
+
+✔ How do you generate reports?  
+   - Use: TestNG default, ExtentReports, or Allure.
+
+✔ How to run failed tests again?  
+   - Use: testng-failed.xml or IRetryAnalyzer.
+
+✔ What is a listener in TestNG?  
+   - Hook: Tracks events like onTestStart, onTestFailure.
+
+✔ How do you manage test data?  
+   - Approach: Excel, CSV, DB, or DataProvider.
+
+✔ How do you organize locators?  
+   - POM: Keep locators separate in Page classes.
+
+✔ How do you avoid stale element?  
+   - Solution: Re-locate element or use waits.
+
+
+
+
+
+

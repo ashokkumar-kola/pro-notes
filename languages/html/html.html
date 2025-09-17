@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Ashoka">
+
+    <!-- REFRESHES EVERY 30 SECONDS -->
+    <!-- <meta http-equiv="refresh" content="30"> -->
+
+    <!-- DEFAULT LINK FOR EVERY LINK -->
+    <!-- <base href="https://www.w3schools.com/" target="_blank">  -->
+
+    <!-- TITLE BAR IMAGE -->
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+
+
+    <title>HTML GEEK</title>
+
+
+    <!-- INTERNAL SOURCES -->
+    <style> 
+        .title-bar-logo{
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+
+    <script> 
+        console.log('Hello World!')
+    </script>
+
+    <!-- EXTERNAL SOURCES -->
+    <!-- CSS LINK  -->
+    <link rel="stylesheet" href="./html.css">
+
+    <!-- JS LINK -->
+    <script src="./html.js" defer></script> 
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/7c4b076c3c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="title">HTML GEEK</h1>
+        <h3>Hypertext Markup Language</h3>
+    </header>
+    <!-- <nav>
+        <ul>
+            <li>Boiler Plate Tags</li>
+            <li>Meta Tags</li>
+            <li>Text Formatting Tags</li>
+            <li>Symantic Tags</li>
+            <li>Divisions Tags</li>
+            <li>Details Tags</li>
+            <li>Table Tags</li>
+            <li>Form Tags</li>
+            <li>Multi Media Tags</li>
+            <li>Others</li>
+            <li>Path </li>
+            <li>HTML Attributes</li>
+        </ul>
+    </nav> -->
+
+    <section class="boilerplate">
+        <h2 class="heading">BOILERPLATE</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <span class="tag-name">&lt;!DOCTYPE html&gt;</span> 
+                <span class="tag-desc">Defines the document type and version.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;html&gt;</span>  
+                <span class="tag-desc">Root element of an HTML document.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;head&gt;</span>  
+                <span class="tag-desc">Contains metadata and links.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;meta charset="UTF-8"&gt;</span>  
+                <span class="tag-desc">Defines character encoding.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>  
+                <span class="tag-desc">Ensures responsive design.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;title&gt;</span>  
+                <span class="tag-desc">Defines the webpage/tab title.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;link rel="stylesheet" href="style.css"&gt;</span>  
+                <span class="tag-desc">Links an external CSS file.</span>
+            </div>
+            <div class="tag">
+                <dfn title="Block Element"><i class="fa-solid fa-cube" title="Block Element"></i></dfn>
+                <span class="tag-name">&lt;body&gt;</span>  
+                <span class="tag-desc">Contains all user-visible content.</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;script src="script.js"&gt;&lt;/script&gt;</span>  
+                <span class="tag-desc">Links an external JavaScript file.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="heading">BASIC TAGS</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;p&gt;</span> 
+                <span class="tag-desc">PARA TAG</span> 
+                <span class="tag-name">&lt;/p&gt;</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;pre&gt;</span>  
+                <span class="tag-desc">PRE-FORMATTED TAG</span>  
+                <span class="tag-name">&lt;/pre&gt;</span>
+                <details>
+                    <summary>
+                        <i class="fa-regular fa-rectangle-list" title="Default Styles"></i>
+                        style="white-space: pre;" - DeCollapsing white space
+                    </summary>
+                </details>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;div&gt;</span>  
+                <span class="tag-desc">DIV TAG</span>  
+                <span class="tag-name">&lt;/div&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-arrows-left-right-to-line" title="Inline Element"></i>
+                <span class="tag-name">&lt;span&gt;</span>  
+                <span class="tag-desc">SPAN TAG</span>  
+                <span class="tag-name">&lt;/span&gt;</span>
+            </div>
+        </div>
+    </section>
+    
+ 
+
+    <section>
+        <h2 class="heading">HEADING TAGS</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h1&gt;</span>
+                <span class="tag-desc">Heading ONE</span>
+                <span class="tag-name">&lt;/h1&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h2&gt;</span>
+                <span class="tag-desc">Heading TWO</span>
+                <span class="tag-name">&lt;/h2&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h3&gt;</span>
+                <span class="tag-desc">Heading THREE</span>
+                <span class="tag-name">&lt;/h3&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h4&gt;</span>
+                <span class="tag-desc">Heading FOUR</span>
+                <span class="tag-name">&lt;/h4&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h5&gt;</span>
+                <span class="tag-desc">Heading FIVE</span>
+                <span class="tag-name">&lt;/h5&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;h6&gt;</span>
+                <span class="tag-desc">Heading SIX</span>
+                <span class="tag-name">&lt;/h6&gt;</span>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <h2 class="heading">SECTION TAGS</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;header&gt;</span>
+                <span class="tag-desc">HEADER TAG</span>
+                <span class="tag-name">&lt;/header&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;nav&gt;</span>
+                <span class="tag-desc">NAVIGATION TAG</span>
+                <span class="tag-name">&lt;/nav&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;section&gt;</span>
+                <span class="tag-desc">SECTION TAG</span>
+                <span class="tag-name">&lt;/section&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;aside&gt;</span>
+                <span class="tag-desc">ASIDE TAG</span>
+                <span class="tag-name">&lt;/aside&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;main&gt;</span>
+                <span class="tag-desc">MAIN TAG</span>
+                <span class="tag-name">&lt;/main&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;article&gt;</span>
+                <span class="tag-desc">ARTICLE TAG</span>
+                <span class="tag-name">&lt;/article&gt;</span>
+            </div>
+            <div class="tag">
+                <i class="fa-solid fa-cube" title="Block Element"></i>
+                <span class="tag-name">&lt;footer&gt;</span>
+                <span class="tag-desc">FOOTER TAG</span>
+                <span class="tag-name">&lt;/footer&gt;</span>
+            </div>
+        </div>
+    </section>
+    
+
+    <section>
+        <h2 class="heading">SPACE | BREAK | HORIZONTAL RULE</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <span class="tag-name">&lt;br&gt;</span>
+                <span class="tag-desc">BREAK</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;hr&gt;</span>
+                <span class="tag-desc">HORIZONTAL RULE</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&amp;nbsp;</span>
+                <span class="tag-desc">NON-BREAKABLE SPACE</span>
+            </div>
+            <div class="tag">
+                <span class="tag-name">&lt;!-- --&gt;</span>
+                <span class="tag-desc">COMMENT</span>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2 class="heading">TEXT FORMATTING TAGS</h2>
+        <div class="tags-container">
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;strong&gt;</span> STRONG TAG <span class="tag-name">&lt;/strong&gt;</span> <strong>strong</strong></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;b&gt;</span> BOLD TAG <span class="tag-name">&lt;/b&gt;</span> <b>Bold</b></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;em&gt;</span> EMPHASIS TAG <span class="tag-name">&lt;/em&gt;</span> <em>Emphasis</em></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;i&gt;</span> ITALIC TAG <span class="tag-name">&lt;/i&gt;</span> <i>Italic</i></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;del&gt;</span> DELETE TAG <span class="tag-name">&lt;/del&gt;</span> <del>Delete</del></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;strike&gt;</span> STRIKE OUT TAG <span class="tag-name">&lt;strike/&gt;</span> <strike>Strike Out</strike></p>
+            </div> 
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;sup&gt;</span> SUPERSCRIPT TAG <span class="tag-name">&lt;/sup&gt;</span> a<sup>2</sup></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;sub&gt;</span> SUBSCRIPT TAG <span class="tag-name">&lt;/sub&gt;</span> H<sub>2</sub></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;big&gt;</span> BIG TAG <span class="tag-name">&lt;/big&gt;</span> <big>Big</big></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;small&gt;</span> SMALL TAG <span class="tag-name">&lt;/small&gt;</span> <small>Small</small></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;mark&gt;</span> MARK TAG <span class="tag-name">&lt;/mark&gt;</span> <mark>Mark</mark></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;q&gt;</span> QUOTATIONS TAG <span class="tag-name">&lt;/q&gt;</span> <q>Quotations</q></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;pre&gt;</span> PRE FORMATTED TAG <span class="tag-name">&lt;/pre&gt;</span></p>
+                <pre>Pre Formatted</pre>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;dfn&gt;</span> DEFINITION TAG <span class="tag-name">&lt;/dfn&gt;</span> <dfn title="Definition">Definition</dfn></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;abbr&gt;</span> ABBREVIATION TAG <span class="tag-name">&lt;/abbr&gt;</span> <abbr title="Abbreviation">Abbreviation</abbr></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;acronym&gt;</span> ACRONYM TAG <span class="tag-name">&lt;acronym/&gt;</span> <acronym title="acronym">Acronym</acronym></p>
+            </div> 
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;blockquote&gt;</span> BLOCKQUOTE TAG <span class="tag-name">&lt;/blockquote&gt;</span></p>
+                <blockquote>A section that is quoted from another source.</blockquote>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;cite&gt;</span> CITE TAG <span class="tag-name">&lt;/cite&gt;</span> <cite>Cite</cite></p>
+            </div>
+            <div class="tag">
+                <p class="element"><span class="tag-name">&lt;code&gt;</span> CODE TAG <span class="tag-name">&lt;/code&gt;</span> <code>Code</code></p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section>
+        <h2 class="heading">GLOBAL ATTRIBUTES</h2>
+        <table class="ws-table-all">
+            <thead>
+                <tr>
+                    <th style="width:25%">Attribute</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="att_global_accesskey.asp">accesskey</a></td>
+                    <td>Specifies a shortcut key to activate/focus an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_class.asp">class</a></td>
+                    <td>Specifies one or more class names for an element (refers to a CSS class)</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_contenteditable.asp">contenteditable</a></td>
+                    <td>Specifies whether the content of an element is editable or not</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_data.asp">data-*</a></td>
+                    <td>Used to store custom data private to the page or application</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_dir.asp">dir</a></td>
+                    <td>Specifies the text direction for the content in an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_draggable.asp">draggable</a></td>
+                    <td>Specifies whether an element is draggable or not</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_enterkeyhint.asp">enterkeyhint</a></td>
+                    <td>Specifies the text of the enter key on a virtual keyboard</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_hidden.asp">hidden</a></td>
+                    <td>Specifies that an element is not yet, or is no longer, relevant</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_id.asp">id</a></td>
+                    <td>Specifies a unique identifier for an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_inert.asp">inert</a></td>
+                    <td>Specifies that the browser should ignore this section</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_inputmode.asp">inputmode</a></td>
+                    <td>Specifies the mode of a virtual keyboard</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_lang.asp">lang</a></td>
+                    <td>Specifies the language of the element's content</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_popover.asp">popover</a></td>
+                    <td>Specifies a popover element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_spellcheck.asp">spellcheck</a></td>
+                    <td>Specifies whether the element should have its spelling and grammar checked</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_style.asp">style</a></td>
+                    <td>Specifies an inline CSS style for an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_tabindex.asp">tabindex</a></td>
+                    <td>Specifies the tabbing order of an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_title.asp">title</a></td>
+                    <td>Specifies extra information about an element</td>
+                </tr>
+                <tr>
+                    <td><a href="att_global_translate.asp">translate</a></td>
+                    <td>Specifies whether the content of an element should be translated</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section>
+        <h2 class="heading">DETAILS TAG</h2>
+        <div class="tags-container">
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;ol&gt;</span> ORDERED LIST TAG <span class="tag-name">&lt;/ol&gt;</span>
+            </p>
+            <ol>
+                <li>Item A</li>
+                <li>Item B</li>
+            </ol>
+        </div> 
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;ul&gt;</span> UNORDERED LIST TAG <span class="tag-name">&lt;/ul&gt;</span>
+            </p>
+            <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+            </ul>
+        </div> 
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;li&gt;</span> LIST ITEM TAG <span class="tag-name">&lt;/li&gt;</span>
+            </p>
+        </div> 
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;dd&gt;</span> Definition list TAG <span class="tag-name">&lt;/dd&gt;</span>
+            </p>
+            <dl>
+                <dt>Title</dt>
+                <dd>Data</dd>
+            </dl>
+        </div> 
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;a&gt;</span> ANCHOR TAG <span class="tag-name">&lt;/a&gt;</span>
+            </p>
+            <span class="info">
+                <a href="ALL_TAGS.html" target="_blank">Click here</a>
+            </span>
+            <ul>
+                <li><b>href</b>: URL of the link</li>
+                <li><b>target</b>: _blank | _self | _parent | _top</li>
+            </ul>
+            <details>
+                <summary><dfn title="Default Styles"><i class="fa-regular fa-rectangle-list"></i></dfn></summary>
+                <p>color: (browser default);</p>
+                <p>text-decoration: underline;</p>
+                <p>cursor: pointer;</p>
+            </details>
+        </div> 
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;details&gt;</span> DETAILS TAG <span class="tag-name">&lt;/details&gt;</span>
+            </p>
+            <details>
+                <summary>Click to reveal details</summary>
+                <p>This content is hidden by default.</p>
+            </details>
+        </div> 
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;summary&gt;</span> SUMMARY TAG <span class="tag-name">&lt;/summary&gt;</span>
+            </p>
+            <details>
+                <summary>Heading of the Details</summary>
+                <p>Summary is the title of the details section.</p>
+            </details>
+        </div> 
+
+        </div>
+    </section>
+    
+
+    <section>
+        <h2 class="heading" > FORM TAGS </h2>
+        <div class="tag">
+            &lt;form&gt; FORM TAG &lt;form/&gt;
+            <span class="info">Defines an HTML form for user input</span> 
+        </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="att">Attribute</th>
+                            <th class="val">Value</th>
+                            <th class="des">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>accept-charset</td>
+                            <td>character_set</td>
+                            <td>character encodings used for the form submission</td>
+                        </tr>
+                        <tr>
+                            <td>action</td>
+                            <td>URL</td>
+                            <td>where to send the form-data</td>
+                        </tr>
+                        <tr>
+                            <td>autocomplete</td>
+                            <td>on | off</td>
+                            <td>autocomplete on or off</td>
+                        </tr>
+                        <tr>
+                            <td>enctype</td>
+                            <td>application/x-www-form-urlencoded | multipart/form-data | text/plain</td>
+                            <td>form-data should be encoded when submitting it to the server (only for method="post")</td>
+                        </tr>
+                        <tr>
+                            <td>method</td>
+                            <td>get | post</td>
+                            <td>HTTP method to use when sending form-data</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>text</td>
+                            <td>name of a form</td>
+                        </tr>
+                        <tr>
+                            <td>novalidate</td>
+                            <td>novalidate</td>
+                            <td>form should not be validated when submitted</td>
+                        </tr>
+                        <tr>
+                            <td>rel</td>
+                            <td>external | help | license | next | nofollow | noopener | noreferrer | opener | prev | search</td>
+                            <td>relationship between a linked resource and the current document</td>
+                        </tr>
+                        <tr>
+                            <td>target</td>
+                            <td>_blank | _self | _parent | _top</td>
+                            <td>where to display the response that is received after submitting the form</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        <div class="tag">
+            &lt;input&gt; INPUT TAG 
+            <span class="info">Defines an input control</span> 
+        </div>
+            <div>
+                <table>
+                    <tbody><tr>
+                      <th class="att">Attribute</th>
+                      <th class="val">Value</th>
+                      <th class="des">Description</th>
+                    </tr>
+                    <tr>
+                      <td>accept</td>
+                      <td><em>file_extension</em><br>
+                   audio/*<br>
+                   video/*<br>
+                   image/*<br>
+                   <i>media_type</i></td>
+                      <td>Specifies a filter for what file types the user can pick from the file 
+                      input dialog box (only for type="file")</td>
+                    </tr>
+                    <tr>
+                      <td>alt</td>
+                      <td><i>text</i></td>
+                      <td>Specifies an alternate text for images (only for type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>autocomplete</td>
+                      <td>on<br>
+                   off</td>
+                      <td>Specifies whether an &lt;input&gt; element should have autocomplete enabled</td>
+                    </tr>
+                    <tr>
+                      <td>autofocus</td>
+                      <td>autofocus</td>
+                      <td>Specifies that an &lt;input&gt; element should automatically get focus when the page loads</td>
+                    </tr>
+                    <tr>
+                      <td>checked</td>
+                      <td>checked</td>
+                      <td>Specifies that an &lt;input&gt; element should be pre-selected when the page loads (for type="checkbox" or type="radio")</td>
+                    </tr>
+                      <tr>
+                      <td>dirname</td>
+                      <td><i>inputname</i>.dir</td>
+                      <td>Specifies that the text direction will be submitted</td>
+                      </tr>
+                    <tr>
+                      <td>disabled</td>
+                      <td>disabled</td>
+                      <td>Specifies that an &lt;input&gt; element should be disabled</td>
+                    </tr>
+                    <tr>
+                      <td>form</td>
+                      <td><i>form_id</i></td>
+                      <td>Specifies the form the &lt;input&gt; element belongs to</td>
+                    </tr>
+                    <tr>
+                      <td>formaction</td>
+                      <td><i>URL</i></td>
+                      <td>Specifies the URL of the file that will process the input control when the form is submitted (for type="submit" and type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>formenctype</td>
+                      <td>application/x-www-form-urlencoded<br>
+                   multipart/form-data<br>
+                   text/plain</td>
+                      <td>Specifies how the form-data should be encoded when submitting it to the server (for type="submit" and type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>formmethod</td>
+                      <td>get<br>post</td>
+                      <td>Defines the HTTP method for sending data to the action URL (for type="submit" and type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>formnovalidate</td>
+                      <td>formnovalidate</td>
+                      <td>Defines that form elements should not be validated when submitted</td>
+                    </tr>
+                    <tr>
+                      <td>formtarget</td>
+                      <td>_blank<br>
+                  _self<br>
+                  _parent<br>
+                  _top<br>
+                   <em>framename</em></td>
+                      <td>Specifies where to display the response that is received after submitting the form (for type="submit" and type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>height</td>
+                      <td><i>pixels</i></td>
+                      <td>Specifies the height of an &lt;input&gt; element (only for type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>list</td>
+                      <td><i>datalist_id</i></td>
+                      <td>Refers to a &lt;datalist&gt; element that contains pre-defined options for an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>max</td>
+                      <td><i>number<br>
+                   date</i></td>
+                      <td>Specifies the maximum value for an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>maxlength</td>
+                      <td><i>number</i></td>
+                      <td>Specifies the maximum number of characters allowed in an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>min</td>
+                      <td><i>number<br>
+                   date</i></td>
+                      <td>Specifies a minimum value for an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>minlength</td>
+                      <td><i>number</i></td>
+                      <td>Specifies the minimum number of characters required in an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>multiple</td>
+                      <td>multiple</td>
+                      <td>Specifies that a user can enter more than one value in an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td><i>text</i></td>
+                      <td>Specifies the name of an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>pattern</td>
+                      <td><em>regexp</em></td>
+                      <td>Specifies a regular expression that an &lt;input&gt; element's value is checked against</td>
+                    </tr>
+                    <tr>
+                      <td>placeholder</td>
+                      <td><i>text</i></td>
+                      <td>Specifies a short hint that describes the expected value of an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>popovertarget</td>
+                      <td><i>element_id</i></td>
+                      <td>Specifies which popover element to invoke (only for type="button")</td>
+                    </tr>
+                    <tr>
+                      <td>popovertargetaction</td>
+                      <td>hide<br>show<br>toggle</td>
+                      <td>Specifies what happens to the popover element when you click the button (only for type="button")</td>
+                    </tr>
+                    <tr>
+                      <td>readonly</td>
+                      <td>readonly</td>
+                      <td>Specifies that an input field is read-only</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td>required</td>
+                      <td>Specifies that an input field must be filled out before submitting the form</td>
+                    </tr>
+                    <tr>
+                      <td>size</td>
+                      <td><i>number</i></td>
+                      <td>Specifies the width, in characters, of an &lt;input&gt; element</td>
+                    </tr>
+                    <tr>
+                      <td>src</td>
+                      <td><i>URL</i></td>
+                      <td>Specifies the URL of the image to use as a submit button (only for 
+                      type="image")</td>
+                    </tr>
+                    <tr>
+                      <td>step</td>
+                      <td>
+                   <i>number<br></i>any</td>
+                      <td>Specifies the interval between legal numbers in an input field</td>
+                    </tr>
+                    <tr>
+                      <td>type</td>
+                      <td>button<br>
+                        checkbox<br>
+                   color<br>
+                        date <br>
+                      datetime-local <br>
+                   email <br>
+                        file<br>
+                        hidden<br>
+                        image<br>
+                        month <br>
+                   number <br>
+                        password<br>
+                        radio<br>
+                        range <br>
+                        reset<br>
+                   search<br>
+                        submit<br>
+                   tel<br>
+                        text<br>
+                   time <br>
+                   url<br>
+                   week </td>
+                      <td>Specifies the type &lt;input&gt; element to display</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>text</i></td>
+                      <td>Specifies the value of an &lt;input&gt; element<b><br>
+                   &nbsp;</b></td>
+                    </tr>
+                    <tr>
+                      <td>width</td>
+                      <td><i>pixels</i></td>
+                      <td>Specifies the width of an &lt;input&gt; element (only for type="image")</td>
+                    </tr>
+                  </tbody></table>
+            </div>
+        
+        <div class="tags-container">
+        <div class="tag">
+            <span class="tag-name">&lt;textarea&gt;</span> TEXTAREA TAG <span class="tag-name">&lt;/textarea&gt;</span>
+            <span class="info">Defines a multiline input control (text area)</span> 
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;button&gt;</span> BUTTON TAG <span class="tag-name">&lt;/button&gt;</span>
+            <span class="info">Defines a clickable button</span> 	
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;select&gt;</span> SELECT TAG <span class="tag-name">&lt;/select&gt;</span>
+            <span class="info">Defines a drop-down list</span> 	
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;optgroup&gt;</span> OPTGROUP TAG <span class="tag-name">&lt;/optgroup&gt;</span>
+            <span class="info">Defines a group of related options in a drop-down list</span> 
+        </div>  
+        
+        <div class="tag">
+            <span class="tag-name">&lt;option&gt;</span> OPTION TAG <span class="tag-name">&lt;/option&gt;</span>
+            <span class="info">Defines an option in a drop-down list</span> 
+        </div>	
+        
+        <div class="tag">
+            <span class="tag-name">&lt;label&gt;</span> LABEL TAG <span class="tag-name">&lt;/label&gt;</span>
+            <span class="info">Defines a label for an input element</span> 
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;fieldset&gt;</span> FIELDSET TAG <span class="tag-name">&lt;/fieldset&gt;</span>
+            <span class="info">Groups related elements in a form</span> 
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;legend&gt;</span> LEGEND TAG <span class="tag-name">&lt;/legend&gt;</span>
+            <span class="info">Defines a caption for a fieldset element</span>
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;datalist&gt;</span> DATALIST TAG <span class="tag-name">&lt;/datalist&gt;</span>
+            <span class="info">Specifies a list of pre-defined options for input controls</span> 
+        </div>
+        
+        <div class="tag">
+            <span class="tag-name">&lt;output&gt;</span> OUTPUT TAG <span class="tag-name">&lt;/output&gt;</span>
+            <span class="info">Defines the result of a calculation</span> 
+        </div>
+        
+        <!-- <img src="../../24_ASSETS/IMAGES/HTML/Form-Tags.png" alt="Form-Tags-Img" style="margin-left: 12%"> -->
+        </div>
+    </section>
+
+    <section>
+        <h2 class="heading">TABLE TAGS</h2>
+
+        <div class="tags-container">
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;table&gt;</span> TABLE TAG <span class="tag-name">&lt;/table&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;th&gt;</span> HEADER TAG <span class="tag-name">&lt;/th&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;tr&gt;</span> ROW TAG <span class="tag-name">&lt;/tr&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;td&gt;</span> DATA TAG <span class="tag-name">&lt;/td&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;caption&gt;</span> CAPTION TAG <span class="tag-name">&lt;/caption&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;colgroup&gt;</span> COLUMN GROUP TAG <span class="tag-name">&lt;/colgroup&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;col&gt;</span> COLUMN TAG <span class="tag-name">&lt;/col&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;thead&gt;</span> TABLE HEAD TAG <span class="tag-name">&lt;/thead&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;tbody&gt;</span> TABLE BODY TAG <span class="tag-name">&lt;/tbody&gt;</span>
+            </p>
+        </div>
+
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;tfoot&gt;</span> TABLE FOOT TAG <span class="tag-name">&lt;/tfoot&gt;</span>
+            </p>
+        </div>
+        </div>
+
+        <table class="ws-table-all notranslate">
+            <caption>-- CSS ATTRIBUTES --</caption>
+            <tbody><tr>
+              <th style="width:20%">Property</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_border.asp">border</a></td>
+              <td>Sets all the border properties in one declaration</td>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_border-collapse.asp">border-collapse</a></td>
+              <td>Specifies whether or not table borders should be collapsed</td>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_border-spacing.asp">border-spacing</a></td>
+              <td>Specifies the distance between the borders of adjacent cells</td>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_tab_caption-side.asp">caption-side</a></td>
+              <td>Specifies the placement of a table caption</td>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_tab_empty-cells.asp">empty-cells</a></td>
+              <td>Specifies whether or not to display borders and background on empty cells in a table</td>
+            </tr>
+            <tr>
+              <td><a href="/cssref/pr_tab_table-layout.asp">table-layout</a></td>
+              <td>Sets the layout algorithm to be used for a table</td>
+            </tr>
+          </tbody></table>
+          <h2>Example :</h2>
+          <table>
+            <caption>Sample Table</caption>
+            <colgroup>
+                <col span="2" style="background-color:red">
+                <col style="background-color:yellow">
+              </colgroup>
+            <thead>
+                <tr>
+                    <th>Col Name 1</th>
+                    <th>Col Name 2</th>
+                    <th>Col Name 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total :</td>
+                    <td> -- </td>
+                    <td> -- </td>
+                </tr>
+            </tfoot>
+          </table>
+    </section>
+
+    <section>
+        <h2 class="heading">MULTIMEDIA</h2>
+        <div class="tags-container">
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;marquee&gt;</span> MARQUEE TAG <span class="tag-name">&lt;/marquee&gt;</span>
+                <span class="info"><marquee>marquee</marquee></span>
+            </p>
+            <ul>
+                <li><b>behavior</b> = "scroll | slide | alternate" (Defines scrolling behavior)</li>
+                <li><b>direction</b> = "left | right | up | down" (Scrolling direction)</li>
+                <li><b>scrollamount</b> = "number" (Speed of movement)</li>
+                <li><b>loop</b> = "infinite | number" (Number of loops)</li>
+                <li><b>bgcolor</b> = "color" (Background color)</li>
+                <li><b>hspace</b> = "number" | <b>vspace</b> = "number" (Horizontal/Vertical spacing)</li>
+            </ul>
+        </div>
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;img&gt;</span> IMAGE TAG
+            </p>
+            <ul>
+                <li><b>src</b> = "url" (Image source URL)</li>
+                <li><b>alt</b> = "text" (Alternative text for accessibility)</li>
+                <li><b>width</b> = "number" | <b>height</b> = "number" (Dimensions)</li>
+                <li><b>loading</b> = "eager | lazy" (Loading strategy)</li>
+                <li><b>decoding</b> = "sync | async | auto" (Decoding method)</li>
+                <li><b>crossorigin</b> = "anonymous | use-credentials" (CORS policy)</li>
+                <li><b>referrerpolicy</b> = "no-referrer | origin | strict-origin-when-cross-origin" (Referrer policy)</li>
+            </ul>
+        </div>
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;audio&gt;</span> AUDIO TAG <span class="tag-name">&lt;/audio&gt;</span>
+            </p>
+            <ul>
+                <li><b>src</b> = "url" (Audio file URL)</li>
+                <li><b>controls</b> (Shows audio controls)</li>
+                <li><b>autoplay</b> (Plays automatically)</li>
+                <li><b>loop</b> (Repeats audio)</li>
+                <li><b>muted</b> (Starts muted)</li>
+                <li><b>preload</b> = "none | metadata | auto" (Loading behavior)</li>
+                <li><b>crossorigin</b> = "anonymous | use-credentials" (CORS policy)</li>
+            </ul>
+        </div>
+    
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;video&gt;</span> VIDEO TAG <span class="tag-name">&lt;/video&gt;</span>
+            </p>
+            <p class="element">
+                <span class="tag-name">&lt;video&gt;</span> 
+                    <span class="tag-name">&lt;source&gt;</span>
+                <span class="tag-name">&lt;/video&gt;</span>
+            </p>
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video> 
+            <ul>
+                <li><b>src</b> = "url" (Video file URL)</li>
+                <li><b>width</b> = "number" | <b>height</b> = "number" (Dimensions)</li>
+                <li><b>poster</b> = "url" (Thumbnail image before playing)</li>
+                <li><b>controls</b> (Shows playback controls)</li>
+                <li><b>autoplay</b> (Starts playing automatically)</li>
+                <li><b>loop</b> (Repeats video)</li>
+                <li><b>muted</b> (Starts muted)</li>
+                <li><b>preload</b> = "none | metadata | auto" (Preload behavior)</li>
+                <li><b>playsinline</b> (Prevents fullscreen mode on mobile)</li>
+                <li><b>crossorigin</b> = "anonymous | use-credentials" (CORS policy)</li>
+                <li><b>referrerpolicy</b> = "no-referrer | origin | strict-origin-when-cross-origin" (Referrer policy)</li>
+            </ul>
+        </div>
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;iframe&gt;</span> IFRAME <span class="tag-name">&lt;/iframe&gt;</span>
+            </p>
+            <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY..">
+            </iframe> 
+        </div>
+        </div>
+    </section>
+
+    
+
+    <section>
+        <h2 class="heading">TAGS WITHOUT DEFAULT STYLES</h2>
+        <div class="tag" style="width: 100%;">
+            <p>Default Style is None</p>
+            
+            <h3 class="sub-heading">📌 Layout & Structure</h3>
+            <ul class="tag-list">
+                <li><span class="block-tag">main</span></li>
+                <li><span class="inline-tag">span</span></li>
+                <li><span class="inline-tag">br</span></li>
+                <li><span class="block-tag">dialog</span></li>
+                <li><span class="block-tag">template</span></li>
+            </ul>
+    
+            <h3 class="sub-heading">📌 Forms & Inputs</h3>
+            <ul class="tag-list">
+                <li><span class="inline-tag">input</span></li>
+                <li><span class="inline-tag">button</span></li>
+                <li><span class="inline-tag">select</span></li>
+                <li><span class="inline-tag">optgroup</span></li>
+                <li><span class="inline-tag">option</span></li>
+                <li><span class="inline-tag">textarea</span></li>
+                <li><span class="inline-tag">meter</span></li>
+                <li><span class="inline-tag">progress</span></li>
+            </ul>
+    
+            <h3 class="sub-heading">📌 Multimedia</h3>
+            <ul class="tag-list">
+                <li><span class="inline-tag">audio</span></li>
+                <li><span class="inline-tag">video</span></li>
+                <li><span class="inline-tag">track</span></li>
+                <li><span class="inline-tag">source</span></li>
+                <li><span class="inline-tag">picture</span></li>
+                <li><span class="inline-tag">canvas</span></li>
+            </ul>
+    
+            <h3 class="sub-heading">📌 Text & Annotations</h3>
+            <ul class="tag-list">
+                <li><span class="inline-tag">abbr</span></li>
+                <li><span class="inline-tag">bdi</span></li>
+                <li><span class="inline-tag">ruby</span></li>
+                <li><span class="inline-tag">rp</span></li>
+                <li><span class="inline-tag">wbr</span></li>
+            </ul>
+    
+            <h3 class="sub-heading">📌 Metadata & Scripting</h3>
+            <ul class="tag-list">
+                <li><span class="inline-tag">base</span></li>
+                <li><span class="inline-tag">meta</span></li>
+                <li><span class="inline-tag">noscript</span></li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <section>
+        <h2 class="heading">TEXT & INLINE ELEMENTS</h2>
+        <table class="ws-table-all notranslate">
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Default Styles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;span&gt;</code></td>
+                    <td>Generic inline container</td>
+                    <td>display: inline;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;strong&gt;</code></td>
+                    <td>Bold text</td>
+                    <td>font-weight: bold;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;b&gt;</code></td>
+                    <td>Stylistically bold text</td>
+                    <td>font-weight: bold;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;em&gt;</code></td>
+                    <td>Emphasized text</td>
+                    <td>font-style: italic;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;i&gt;</code></td>
+                    <td>Italic text</td>
+                    <td>font-style: italic;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;mark&gt;</code></td>
+                    <td>Highlighted text</td>
+                    <td>background-color: yellow; color: black;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;small&gt;</code></td>
+                    <td>Smaller text</td>
+                    <td>font-size: smaller;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;del&gt;</code></td>
+                    <td>Deleted text</td>
+                    <td>text-decoration: line-through;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;ins&gt;</code></td>
+                    <td>Inserted text</td>
+                    <td>text-decoration: underline;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;sub&gt;</code></td>
+                    <td>Subscript text</td>
+                    <td>vertical-align: sub; font-size: smaller;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;sup&gt;</code></td>
+                    <td>Superscript text</td>
+                    <td>vertical-align: super; font-size: smaller;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;code&gt;</code></td>
+                    <td>Inline code</td>
+                    <td>font-family: monospace;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;kbd&gt;</code></td>
+                    <td>Keyboard input</td>
+                    <td>font-family: monospace;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;abbr&gt;</code></td>
+                    <td>Abbreviation</td>
+                    <td>border-bottom: 1px dotted; cursor: help;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;cite&gt;</code></td>
+                    <td>Title of a work</td>
+                    <td>font-style: italic;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;q&gt;</code></td>
+                    <td>Short inline quote</td>
+                    <td>quotes: '"' '"';</td>
+                </tr>
+            </tbody>
+            </table>
+
+            <h2 class="heading">BLOCK ELEMENTS</h2>
+            <table class="ws-table-all notranslate">
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Default Styles</th>
+                </tr>
+                <tr>
+                    <td>&lt;div&gt;</td>
+                    <td>A generic container for content with no default styling.</td>
+                    <td>display: block;</td>
+                </tr>
+                <tr>
+                    <td>&lt;p&gt;</td>
+                    <td>Defines a paragraph of text.</td>
+                    <td>display: block; margin: 1em 0;</td>
+                </tr>
+                <tr>
+                    <td>&lt;h1&gt; - &lt;h6&gt;</td>
+                    <td>Defines heading levels from largest (&lt;h1&gt;) to smallest (&lt;h6&gt;).</td>
+                    <td>display: block; font-weight: bold; margin: 0.67em 0;</td>
+                </tr>
+                <tr>
+                    <td>&lt;ul&gt;</td>
+                    <td>Defines an unordered (bulleted) list.</td>
+                    <td>display: block; list-style-type: disc; margin: 1em 0; padding-left: 40px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;ol&gt;</td>
+                    <td>Defines an ordered (numbered) list.</td>
+                    <td>display: block; list-style-type: decimal; margin: 1em 0; padding-left: 40px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;li&gt;</td>
+                    <td>Defines a list item inside &lt;ul&gt; or &lt;ol&gt;.</td>
+                    <td>display: list-item;</td>
+                </tr>
+                <tr>
+                    <td>&lt;hr&gt;</td>
+                    <td>Represents a thematic break (horizontal rule) between content.</td>
+                    <td>display: block; border: 0; border-top: 1px solid #ccc; margin: 0.5em 0;</td>
+                </tr>
+                <tr>
+                    <td>&lt;blockquote&gt;</td>
+                    <td>Defines a section quoted from another source.</td>
+                    <td>display: block; margin: 1em 40px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;pre&gt;</td>
+                    <td>Displays preformatted text, preserving whitespace and line breaks.</td>
+                    <td>display: block; font-family: monospace; white-space: pre; margin: 1em 0;</td>
+                </tr>
+                <tr>
+                    <td>&lt;address&gt;</td>
+                    <td>Defines contact information for its nearest ancestor or page.</td>
+                    <td>display: block; font-style: italic;</td>
+                </tr>
+                <tr>
+                    <td>&lt;figure&gt;</td>
+                    <td>Groups media elements (images, videos, etc.) with a caption.</td>
+                    <td>display: block; margin: 1em 40px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;figcaption&gt;</td>
+                    <td>Defines a caption for the &lt;figure&gt; element.</td>
+                    <td>display: block; text-align: center;</td>
+                </tr>
+                <tr>
+                    <td>&lt;fieldset&gt;</td>
+                    <td>Groups related form elements together.</td>
+                    <td>display: block; border: 1px solid #ccc; padding: 0.35em 0.75em 0.625em;</td>
+                </tr>
+                <tr>
+                    <td>&lt;legend&gt;</td>
+                    <td>Defines a title or caption for a &lt;fieldset&gt;.</td>
+                    <td>display: block; padding: 0 0.5em;</td>
+                </tr>
+            </table>
+
+            <h2 class="heading">LISTS & TABLE ELEMENTS</h2>
+            <table class="ws-table-all notranslate">
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Default Styles</th>
+                </tr>
+                <!-- Lists -->
+                <tr>
+                    <td><code>&lt;ul&gt;</code></td>
+                    <td>Unordered list</td>
+                    <td>display: block; padding-left: 40px;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;ol&gt;</code></td>
+                    <td>Ordered list</td>
+                    <td>display: block; padding-left: 40px;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;li&gt;</code></td>
+                    <td>List item</td>
+                    <td>display: list-item;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;dl&gt;</code></td>
+                    <td>Definition list</td>
+                    <td>display: block; margin: 1em 0;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;dt&gt;</code></td>
+                    <td>Definition term</td>
+                    <td>display: block; font-weight: bold;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;dd&gt;</code></td>
+                    <td>Definition description</td>
+                    <td>display: block; margin-left: 40px;</td>
+                </tr>
+                <!-- Tables -->
+                <tr>
+                    <td><code>&lt;table&gt;</code></td>
+                    <td>Table element</td>
+                    <td>display: table; border-collapse: separate;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;caption&gt;</code></td>
+                    <td>Table caption</td>
+                    <td>display: table-caption; text-align: center;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;thead&gt;</code></td>
+                    <td>Table head</td>
+                    <td>display: table-header-group; font-weight: bold;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tbody&gt;</code></td>
+                    <td>Table body</td>
+                    <td>display: table-row-group;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tfoot&gt;</code></td>
+                    <td>Table footer</td>
+                    <td>display: table-footer-group;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tr&gt;</code></td>
+                    <td>Table row</td>
+                    <td>display: table-row;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;th&gt;</code></td>
+                    <td>Table header cell</td>
+                    <td>display: table-cell; font-weight: bold; text-align: center;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;td&gt;</code></td>
+                    <td>Table data cell</td>
+                    <td>display: table-cell; text-align: left;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;colgroup&gt;</code></td>
+                    <td>Table column group</td>
+                    <td>display: table-column-group;</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;col&gt;</code></td>
+                    <td>Table column</td>
+                    <td>display: table-column;</td>
+                </tr>
+            </table>
+
+            <h2 class="heading">FORMS & INPUTS</h2>
+            <table class="ws-table-all notranslate">
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Default Styles</th>
+                </tr>
+                <tr>
+                    <td>&lt;form&gt;</td>
+                    <td>Defines an HTML form for user input</td>
+                    <td>display: block;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input&gt;</td>
+                    <td>Defines an input field</td>
+                    <td>display: inline-block; padding: 1px 2px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;textarea&gt;</td>
+                    <td>Defines a multi-line text input</td>
+                    <td>display: inline-block; resize: both;</td>
+                </tr>
+                <tr>
+                    <td>&lt;button&gt;</td>
+                    <td>Defines a clickable button</td>
+                    <td>display: inline-block; padding: 1px 6px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;select&gt;</td>
+                    <td>Defines a drop-down list</td>
+                    <td>display: inline-block;</td>
+                </tr>
+                <tr>
+                    <td>&lt;optgroup&gt;</td>
+                    <td>Groups options in a drop-down list</td>
+                    <td>font-weight: bold;</td>
+                </tr>
+                <tr>
+                    <td>&lt;option&gt;</td>
+                    <td>Defines an option in a drop-down list</td>
+                    <td>display: block; padding: 0px 2px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;label&gt;</td>
+                    <td>Defines a label for an input element</td>
+                    <td>cursor: default;</td>
+                </tr>
+                <tr>
+                    <td>&lt;fieldset&gt;</td>
+                    <td>Groups related elements in a form</td>
+                    <td>display: block; border: 2px groove (internal value); padding: 0.35em 0.75em 0.625em;</td>
+                </tr>
+                <tr>
+                    <td>&lt;legend&gt;</td>
+                    <td>Defines a caption for a fieldset</td>
+                    <td>display: block; padding: 0px 2px;</td>
+                </tr>
+                <tr>
+                    <td>&lt;datalist&gt;</td>
+                    <td>Defines a list of pre-defined options for input</td>
+                    <td>display: none;</td>
+                </tr>
+                <tr>
+                    <td>&lt;output&gt;</td>
+                    <td>Represents the result of a calculation</td>
+                    <td>display: inline;</td>
+                </tr>
+                <tr>
+                    <td>&lt;progress&gt;</td>
+                    <td>Represents a progress bar</td>
+                    <td>display: inline-block; appearance: progress-bar;</td>
+                </tr>
+                <tr>
+                    <td>&lt;meter&gt;</td>
+                    <td>Represents a scalar measurement</td>
+                    <td>display: inline-block; appearance: meter;</td>
+                </tr>
+            </table>
+
+    <h2 class="heading">MULTIMEDIA ELEMENTS</h2>
+    <table class="ws-table-all notranslate">
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+            <th>Default Styles</th>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;img&gt;</span></td>
+            <td>Embeds an image</td>
+            <td>display: inline-block; width: auto; height: auto;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;audio&gt;</span></td>
+            <td>Embeds audio content</td>
+            <td>display: inline-block;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;video&gt;</span></td>
+            <td>Embeds a video</td>
+            <td>display: inline-block; width: 300px; height: auto;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;source&gt;</span></td>
+            <td>Defines media resources for &lt;video&gt; and &lt;audio&gt;</td>
+            <td>display: none;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;track&gt;</span></td>
+            <td>Defines text tracks for &lt;video&gt; and &lt;audio&gt;</td>
+            <td>display: none;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;picture&gt;</span></td>
+            <td>Defines multiple image sources</td>
+            <td>display: inline-block;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;figure&gt;</span></td>
+            <td>Groups media content with a caption</td>
+            <td>display: block; margin: 1em 40px;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;figcaption&gt;</span></td>
+            <td>Defines a caption for a &lt;figure&gt;</td>
+            <td>display: block; text-align: center;</td>
+        </tr>
+    </table>
+
+    <h2 class="heading">INTERACTIVE ELEMENTS</h2>
+    <table class="ws-table-all notranslate">
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+            <th>Default Styles</th>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;details&gt;</span></td>
+            <td>Creates a collapsible section</td>
+            <td>display: block;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;summary&gt;</span></td>
+            <td>Defines a summary for a &lt;details&gt; element</td>
+            <td>display: block; cursor: pointer;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;dialog&gt;</span></td>
+            <td>Defines a dialog box or interactive popup</td>
+            <td>display: none (unless open); position: absolute;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;menu&gt;</span></td>
+            <td>Defines a list/menu of commands</td>
+            <td>display: block; list-style-type: none; padding: 0;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;menuitem&gt;</span> <i>(Deprecated)</i></td>
+            <td>Defines a command in a popup menu</td>
+            <td>display: block;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;slot&gt;</span></td>
+            <td>Placeholder for rendering in Web Components</td>
+            <td>display: contents;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;template&gt;</span></td>
+            <td>Defines HTML that is not rendered immediately</td>
+            <td>display: none;</td>
+        </tr>
+    </table>
+
+    <h2 class="heading">SPECIAL & METADATA ELEMENTS</h2>
+    <table class="ws-table-all notranslate">
+        <tr>
+            <th>Element</th>
+            <th>Description</th>
+            <th>Default Styles</th>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;base&gt;</span></td>
+            <td>Specifies the base URL for relative URLs</td>
+            <td>Not visible</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;head&gt;</span></td>
+            <td>Container for metadata and links to external resources</td>
+            <td>display: none;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;link&gt;</span></td>
+            <td>Defines relationships between documents (e.g., stylesheets)</td>
+            <td>Not visible</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;meta&gt;</span></td>
+            <td>Provides metadata such as character set, viewport, etc.</td>
+            <td>Not visible</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;style&gt;</span></td>
+            <td>Contains CSS rules for the document</td>
+            <td>display: none;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;title&gt;</span></td>
+            <td>Defines the document title shown in the browser tab</td>
+            <td>Not visible</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;script&gt;</span></td>
+            <td>Contains or links to JavaScript code</td>
+            <td>display: none;</td>
+        </tr>
+        <tr>
+            <td><span class="tag-name">&lt;noscript&gt;</span></td>
+            <td>Defines alternative content for users with JavaScript disabled</td>
+            <td>display: block;</td>
+        </tr>
+    </table>
+</section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+    <h2 class="heading">CANVAS</h2>
+    <div class="tags-container">
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;canvas&gt;</span> CANVAS <span class="tag-name">&lt;/canvas&gt;</span>
+            </p>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas> 
+        </div> 
+    </div>
+</section>
+
+<section>
+    <h2 class="heading">SVG</h2>
+    <div class="tags-container">
+        <div class="tag">
+            <p class="element">
+                <span class="tag-name">&lt;svg&gt;</span> SVG <span class="tag-name">&lt;/svg&gt;</span>
+            </p>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+            <svg width="400" height="120">
+                <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+            </svg>
+            <svg width="300" height="200">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+            </svg>
+        </div> 
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- 
+
+Element
+    Elements
+        Tags
+        Attributes
+        Content
+
+    
+    Void Elements
+
+    Entities
+        &#169; - copyright
+-->
+

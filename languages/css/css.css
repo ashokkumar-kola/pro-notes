@@ -1,0 +1,714 @@
+/*  */
+:root {
+    --primary: blue;
+}
+
+
+/*  */
+* {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+
+    padding: 2em;
+    margin: 0;
+
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*  */
+section {
+    width: 100%;
+    height: 90vh;
+
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.401);
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.container {
+    width: 100%;
+    height: 700px;
+
+    padding: 1em;
+    margin: 1em;
+
+    border: 1px solid green;
+}
+
+
+.flex-box .box {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+
+    background-color: skyblue;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+
+
+
+
+
+
+/* BACKGROUND */
+.background {
+    background: #f0f0f0 url("image.jpg") no-repeat center/cover;
+    /* color | image | repeat | position / size */
+
+    background-color: #f0f0f0;
+    /* <color> */
+
+    background-image: url("image.jpg");
+    /* <url> | none | gradient */
+
+    background-repeat: no-repeat;
+    /* repeat | no-repeat | repeat-x | repeat-y | space | round */
+
+    background-position: center;
+    /* <x-pos> <y-pos> | left | right | top | bottom | center */
+
+    background-size: cover;
+    /* auto | cover | contain | <width> <height> */
+
+    background-attachment: fixed;
+    /* scroll | fixed | local */
+
+    background-clip: border-box;
+    /* border-box | padding-box | content-box | text */
+
+    background-origin: padding-box;
+    /* padding-box | border-box | content-box */
+
+    background-blend-mode: normal;
+    /* normal | multiply | screen | overlay | darken | lighten | etc. */
+}
+
+
+
+/* GRADIENTS */
+.gradient {
+    /* 🔹 LINEAR GRADIENT */
+    background: linear-gradient(to right, red, blue);
+    /* linear-gradient(direction, color1, color2, ...) */
+    /* Directions: to top | to bottom | to left | to right */
+    /* Angles: linear-gradient(45deg, red, blue) */
+
+    /* 🔹 RADIAL GRADIENT */
+    background: radial-gradient(circle, red, blue);
+    /* radial-gradient(shape size at position, color1, color2, ...) */
+    /* Shapes: circle | ellipse */
+    /* Positions: at center | at top | at bottom | at left | at right | at 50% 50% */
+
+    /* 🔹 CONIC GRADIENT */
+    background: conic-gradient(from 0deg, red, yellow, green, blue, red);
+    /* conic-gradient(from angle, color1, color2, ...) */
+    /* Angles: from 0deg | from 90deg | from 180deg | from 270deg */
+    /* Positions: at center | at 50% 50% */
+
+    /* 🔹 REPEATING LINEAR GRADIENT */
+    background: repeating-linear-gradient(45deg, red, red 10px, blue 10px, blue 20px);
+    /* repeating-linear-gradient(angle, color1, stop1, color2, stop2, ...) */
+
+    /* 🔹 REPEATING RADIAL GRADIENT */
+    background: repeating-radial-gradient(circle, red, red 10px, blue 10px, blue 20px);
+    /* repeating-radial-gradient(shape size at position, color1, stop1, color2, stop2, ...) */
+
+    /* 🔹 REPEATING CONIC GRADIENT */
+    background: repeating-conic-gradient(red 0deg 30deg, blue 30deg 60deg);
+    /* repeating-conic-gradient(color1 start-angle end-angle, color2 start-angle end-angle, ...) */
+}
+
+
+
+
+/* COLORS AND FORMATS */
+.colors {
+    color: #ff5733;
+    /* Sets the text color (foreground color) */
+    /* Example: #ff5733, rgb(255, 87, 51), rgba(255, 87, 51, 0.5), hsl(9, 100%, 60%) */
+
+    background-color: #f0f0f0;
+    /* Sets the background color */
+    /* Example: #f0f0f0, rgba(240, 240, 240, 1), hsl(0, 0%, 94%) */
+
+    border-color: #00bcd4;
+    /* Sets the border color */
+    /* Example: #00bcd4, rgb(0, 188, 212), rgba(0, 188, 212, 0.7) */
+
+    /* RGBA (Red, Green, Blue, Alpha for transparency) */
+    background-color: rgba(255, 87, 51, 0.3);
+    /* Example: rgba(255, 87, 51, 0.3) */
+
+    /* HSLA (Hue, Saturation, Lightness, Alpha for transparency) */
+    background-color: hsla(9, 100%, 60%, 0.5);
+    /* Example: hsla(9, 100%, 60%, 0.5) */
+
+    /* HEX Format */
+    color: #ff5733;
+    /* Example: #ff5733 (RGB Hex), #ffffff (White), #000000 (Black) */
+
+    /* Named Colors */
+    color: red;
+    /* Example: red, blue, green, black, white, etc. */
+
+    /* CSS Color Keywords */
+    color: white;
+    background-color: lightgray;
+    border-color: darkblue;
+    /* Examples: white, black, gray, blue, green, etc. */
+    
+    /* Gradients */
+    background: linear-gradient(to right, #ff5733, #00bcd4);
+    /* Linear gradient */
+    background: radial-gradient(circle, #ff5733, #00bcd4);
+    /* Radial gradient */
+    background: repeating-linear-gradient(45deg, #ff5733, #ff5733 10px, #00bcd4 10px, #00bcd4 20px);
+    /* Repeating linear gradient */
+
+    /* CSS Variables (Custom Properties) */
+    --primary-color: #ff5733;
+    color: var(--primary-color);
+    /* You can define a color in a variable and reuse it */
+}
+
+/* Color Functions */
+.color-functions {
+    color: rgb(255, 87, 51);
+    /* RGB Color Function */
+    background-color: rgba(255, 87, 51, 0.5);
+    /* RGBA Color Function (with transparency) */
+    background-color: hsl(9, 100%, 60%);
+    /* HSL Color Function */
+    background-color: hsla(9, 100%, 60%, 0.5);
+    /* HSLA Color Function (with transparency) */
+}
+
+
+
+
+
+/* BORDER */
+.border {
+    border: 2px solid #000;
+    /* width | style | color */
+    /* Example: border: 2px solid #000; */
+
+    border-width: 2px;
+    /* Specifies the width of the border */
+    /* Example: 1px, 2px, 3px, 0.5em */
+
+    border-style: solid;
+    /* Defines the border style */
+    /* Options: none | solid | dashed | dotted | double | groove | ridge | inset | outset | hidden */
+
+    border-color: #000;
+    /* Defines the color of the border */
+    /* Example: #ff5733, rgba(255, 87, 51, 0.5) */
+
+    border-radius: 10px;
+    /* Round corners of the border */
+    /* Example: 10px, 50%, 1em */
+
+    /* Individual Borders */
+    border-top: 2px solid #ff5733;
+    /* Border on the top */
+    border-right: 2px solid #ff5733;
+    /* Border on the right */
+    border-bottom: 2px solid #ff5733;
+    /* Border on the bottom */
+    border-left: 2px solid #ff5733;
+    /* Border on the left */
+
+    /* Individual Border Width */
+    border-top-width: 2px;
+    /* Top border width */
+    border-right-width: 2px;
+    /* Right border width */
+    border-bottom-width: 2px;
+    /* Bottom border width */
+    border-left-width: 2px;
+    /* Left border width */
+
+    /* Individual Border Style */
+    border-top-style: solid;
+    /* Top border style */
+    border-right-style: solid;
+    /* Right border style */
+    border-bottom-style: solid;
+    /* Bottom border style */
+    border-left-style: solid;
+    /* Left border style */
+
+    /* Individual Border Color */
+    border-top-color: #ff5733;
+    /* Top border color */
+    border-right-color: #ff5733;
+    /* Right border color */
+    border-bottom-color: #ff5733;
+    /* Bottom border color */
+    border-left-color: #ff5733;
+    /* Left border color */
+
+    /* Border Shorthand for all sides */
+    border-radius: 10px 15px 20px 25px;
+    /* top-left, top-right, bottom-right, bottom-left */
+    /* Example: border-radius: 50% 25% 25% 50%; */
+}
+
+
+
+/* BOX MODEL */
+.box-model {
+    width: 200px;
+    /* Defines the width of the content area */
+    /* Example: 100px, 50%, 10rem */
+
+    height: 100px;
+    /* Defines the height of the content area */
+    /* Example: 100px, 50%, 10rem */
+
+    padding: 10px;
+    /* Padding inside the content area */
+    /* Example: 10px, 1em, 2rem, or padding: 10px 20px 30px 40px; (top, right, bottom, left) */
+
+    margin: 20px;
+    /* Space outside the element */
+    /* Example: 20px, 1em, 2rem, or margin: 10px 20px 30px 40px; (top, right, bottom, left) */
+
+    border: 2px solid #000;
+    /* Border around the content and padding */
+    /* border-width | border-style | border-color */
+
+    box-sizing: content-box;
+    /* Defines the box model for the element */
+    /* content-box | border-box */
+    /* content-box: width/height excludes padding and border */
+    /* border-box: width/height includes padding and border */
+
+    /* Individual Box Model Properties: */
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+
+    border-top: 2px solid #ff5733;
+    border-right: 2px solid #ff5733;
+    border-bottom: 2px solid #ff5733;
+    border-left: 2px solid #ff5733;
+}
+
+
+
+/* BOX SHADOW */
+.box-shadow {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+
+    /* Example Variations */
+    /* box-shadow: none; */
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+    /* box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3); */
+}
+
+
+
+
+/* DISPLAY */
+.display {
+    display: flex;
+    /* block | inline | inline-block | flex | grid | inline-flex | inline-grid | none */
+
+    /* 🔹 BLOCK LEVEL ELEMENT */
+    display: block;
+    /* Takes full width, starts on a new line */
+
+    /* 🔹 INLINE ELEMENT */
+    display: inline;
+    /* Takes only necessary width, stays in line */
+
+    /* 🔹 INLINE-BLOCK */
+    display: inline-block;
+    /* Behaves like inline but allows setting width & height */
+
+    /* 🔹 FLEXBOX */
+    display: flex;
+    /* Enables Flexbox layout */
+
+    display: inline-flex;
+    /* Same as flex but behaves like an inline element */
+
+    /* 🔹 GRID */
+    display: grid;
+    /* Enables Grid layout */
+
+    display: inline-grid;
+    /* Same as grid but behaves like an inline element */
+
+    /* 🔹 FLOW-ROOT */
+    display: flow-root;
+    /* Creates a block formatting context to contain floats */
+
+    /* 🔹 TABLE RELATED */
+    display: table;
+    /* Makes an element behave like a table */
+
+    display: table-row;
+    /* Behaves like a table row */
+
+    display: table-cell;
+    /* Behaves like a table cell */
+
+    display: table-caption;
+    /* Behaves like a table caption */
+
+    display: table-column;
+    /* Defines a table column */
+
+    display: table-column-group;
+    /* Groups multiple table columns */
+
+    display: table-header-group;
+    /* Groups table headers */
+
+    display: table-footer-group;
+    /* Groups table footers */
+
+    display: table-row-group;
+    /* Groups table rows */
+
+    /* 🔹 LIST */
+    display: list-item;
+    /* Behaves like a list item */
+
+    /* 🔹 CONTENT VISIBILITY */
+    display: contents;
+    /* Makes the element disappear but keeps its children visible */
+
+    display: none;
+    /* Hides the element completely */
+}
+
+
+
+/* FLEX BOX */
+.flex-box {
+    display: flex;
+
+    flex-direction: row;
+    /* row | column | row-reverse | column-reverse */
+
+    flex-wrap: wrap;
+    /* nowrap | wrap | wrap-reverse */
+
+    flex-flow: row wrap;
+    /* <flex-direction> <flex-wrap> */
+
+    justify-content: center;
+    /* center | flex-start | flex-end | space-around | space-between | space-evenly */
+
+    align-items: center;
+    /* center | flex-start | flex-end | stretch | baseline | normal */
+
+    align-content: center;
+    /* center | stretch | flex-start | flex-end | space-around | space-between | space-evenly */
+
+    gap: 1em;
+
+    flex-grow: 0;
+    /* <number> (default is 0) */
+
+    flex-shrink: 1;
+    /* <number> (default is 1) */
+
+    flex-basis: auto;
+    /* <length> | auto */
+
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    /* grid | inline-grid */
+
+    grid-template-columns: repeat(3, 1fr);
+    /* Defines columns (auto | px | % | fr) */
+    /* Example: grid-template-columns: 200px 1fr 2fr; */
+
+    grid-template-rows: repeat(2, auto);
+    /* Defines rows (auto | px | % | fr) */
+    /* Example: grid-template-rows: 100px auto 50px; */
+
+    grid-template-areas:
+        "header header header"
+        "sidebar content content"
+        "footer footer footer";
+    /* Defines named areas */
+
+    grid-column-gap: 10px;
+    /* Space between columns (deprecated, use gap) */
+
+    grid-row-gap: 10px;
+    /* Space between rows (deprecated, use gap) */
+
+    gap: 10px 15px;
+    /* Shorthand for row-gap and column-gap */
+
+    grid-auto-columns: auto;
+    /* Defines size for implicitly created columns */
+
+    grid-auto-rows: auto;
+    /* Defines size for implicitly created rows */
+
+    grid-auto-flow: row;
+    /* row | column | row dense | column dense */
+    
+    justify-items: center;
+    /* Controls item alignment inside grid cells */
+    /* start | end | center | stretch */
+
+    align-items: center;
+    /* Aligns items vertically in cells */
+    /* start | end | center | stretch */
+
+    place-items: center;
+    /* Shorthand for align-items & justify-items */
+
+    justify-content: center;
+    /* Aligns the entire grid horizontally */
+    /* start | end | center | space-between | space-around | space-evenly */
+
+    align-content: center;
+    /* Aligns the entire grid vertically */
+    /* start | end | center | space-between | space-around | space-evenly */
+
+    place-content: center;
+    /* Shorthand for align-content & justify-content */
+}
+
+/* GRID ITEM */
+.grid-item {
+    grid-column: 1 / 3;
+    /* Defines start and end position for columns */
+
+    grid-row: 2 / 4;
+    /* Defines start and end position for rows */
+
+    grid-column-start: 1;
+    /* Explicit start column */
+
+    grid-column-end: 3;
+    /* Explicit end column */
+
+    grid-row-start: 2;
+    /* Explicit start row */
+
+    grid-row-end: 4;
+    /* Explicit end row */
+
+    grid-area: header;
+    /* Assigns the item to a named grid area */
+
+    justify-self: center;
+    /* Aligns a single grid item horizontally */
+    /* start | end | center | stretch */
+
+    align-self: center;
+    /* Aligns a single grid item vertically */
+    /* start | end | center | stretch */
+
+    place-self: center;
+    /* Shorthand for align-self & justify-self */
+}
+
+
+
+/* POSITION */
+.position {
+    position: relative;
+    /* static | relative | absolute | fixed | sticky */
+
+    top: 0;
+    /* <length> | <percentage> | auto */
+
+    right: 0;
+    /* <length> | <percentage> | auto */
+
+    bottom: auto;
+    /* <length> | <percentage> | auto */
+
+    left: auto;
+    /* <length> | <percentage> | auto */
+
+    z-index: 1;
+    /* <integer> | auto */
+
+    inset: auto;
+    /* <top> <right> <bottom> <left> | auto */
+}
+
+
+
+/* TRANSFORM */
+.transform {
+    transform: rotate(45deg);
+    /* rotate(angle) */
+    /* Example: rotate(45deg), rotate(90deg), rotate(180deg) */
+
+    transform: scale(1.5);
+    /* scale(x, y) or scale(value) */
+    /* Example: scale(1.5), scale(2, 1.5) */
+
+    transform: translate(50px, 100px);
+    /* translate(x, y) */
+    /* Example: translate(50px, 100px), translateX(50px), translateY(100px) */
+
+    transform: skew(30deg, 20deg);
+    /* skew(x-angle, y-angle) */
+    /* Example: skew(30deg, 20deg) */
+
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    /* matrix(a, b, c, d, tx, ty) */
+    /* Defines a 2D transformation matrix */
+
+    /* Multiple Transforms */
+    transform: translate(50px, 100px) rotate(45deg) scale(1.5);
+    /* Combine multiple transforms in one line */
+}
+
+/* 3D Transformations */
+.transform-3d {
+    transform: perspective(500px) rotateX(30deg) rotateY(45deg);
+    /* perspective(value) */
+    /* Applies a 3D perspective to the element */
+    /* Example: perspective(500px) */
+
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    /* matrix3d(m11, m12, ..., m44) */
+    /* Defines a 3D transformation matrix */
+
+    transform: rotate3d(1, 1, 0, 45deg);
+    /* rotate3d(x, y, z, angle) */
+    /* Example: rotate3d(1, 1, 0, 45deg) */
+}
+
+
+
+
+
+/* TRANSITION */
+.transition {
+    transition: all 0.3s ease-in-out;
+    /* property | duration | timing-function | delay */
+
+    transition-property: all;
+    /* Specifies the CSS property to animate */
+    /* Example: opacity, background-color, transform, etc. */
+
+    transition-duration: 0.3s;
+    /* Specifies the duration of the transition */
+
+    transition-timing-function: ease-in-out;
+    /* Specifies the acceleration curve */
+    /* Options: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n) | steps(n, start/end) */
+
+    transition-delay: 0s;
+    /* Specifies delay before transition starts */
+}
+
+/* MULTIPLE PROPERTIES */
+.transition-multiple {
+    transition: background-color 0.3s ease, transform 0.5s ease-in-out;
+    /* You can transition multiple properties */
+}
+
+/* HOVER EFFECT */
+.transition:hover {
+    background-color: #ff5733;
+    transform: scale(1.1);
+}
+
+
+
+
+
+/* ANIMATION */
+.animation {
+    animation: fade-in 1s ease-in-out 0s infinite alternate;
+    /* name | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
+
+    /* Example Variations */
+    /* animation: none; */
+    /* animation: slide-up 0.5s linear forwards; */
+    /* animation: bounce 2s ease-in infinite; */
+    /* animation: rotate 1s ease-out 0.2s infinite alternate-reverse; */
+}
+
+/* Keyframe Examples */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

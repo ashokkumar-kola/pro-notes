@@ -1,0 +1,92 @@
+
+Routing Requests
+
+Authentication
+
+Authorization
+
+security policy enforcements
+
+Monitoring Rate Limiting
+
+load balancing 
+
+circuit breaking
+
+protocol tranlation
+
+service discovery
+
+logging
+
+analytics
+
+billing
+
+caching 
+
+
+
+Secure Headers - Tiny Rule Books
+
+CORS - Cross Origin Resource Sharing
+
+CSP - Content Security Policy
+
+HSTS - HTTP Strict Transport Security
+
+
+Cross Site Scripting
+Loads over HTTPS
+Referrer Policy 
+Permission Policy
+
+MIME Sniffing
+
+Fusion Auth
+
+AUTH
+
+CIAM 
+
+OAuth 2.0
+
+JWT
+
+HTTPS
+
+SAML
+
+SCIM	 
+
+
+
+
+Secure User Access
+
+Signup and Login
+Multi Factor Auth
+Social Logins
+Reset Passwords
+User Management
+Secure Token Issurance
+
+
+
+
+
+
+
+
+REDIS HASHMAP
+
+
+CACHE HIT
+
+
+TRIES
+Compressed Tries
+
+Bloom Filter
+
+PREFIX TREES

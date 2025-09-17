@@ -1,0 +1,1006 @@
+// ######################################################################################################################################### //
+
+
+	Selenium Client Libraries
+		 |
+		 v
+	     WebDriver Interface
+		 |
+	   ------------------------
+	   |          |           |
+	Browser     Remote      Browser
+	Driver      WebDriver   Driver
+	(Chrome,    (Remote     (Firefox,
+	Edge, FF)   Execution)  Safari)
+	   |          |
+	   |    -----------------
+	   |    |               |
+	   | JSON Wire       JavaScript
+	   | Protocol        Executor / Screenshot
+	   |
+	Real Browser
+
+
+   ✔ "SearchContext" interface 
+   	- Find elements on a page : findElement(), findElements()
+   
+   ✔ "WebDriver" interface extends the "SearchContext" interface
+   	- Inherits SearchContext "find" methods
+   	- Defines all methods to control a browser : get(), getTitle()
+   
+   ✔ "RemoteWebDriver" class implements the "WebDriver" interface
+   	- Provides the concrete code for all the methods declared in WebDriver
+   	- translate commands (e.g., driver.click()) into the W3C WebDriver protocol (a JSON-over-HTTP protocol) 
+   	- and send them to the browser-specific driver
+   
+   ✔ classes like ChromeDriver, FirefoxDriver, and SafariDriver extend the RemoteWebDriver class
+   
+   ✔ "RemoteWebDriver" implements "JavaScriptExecutor" and "TakesScreenshot" interfaces
+   	- Define special, optional capabilities.
+   	- executeScript(), getScreenshotAs()
+   
+   ✔ Selenium Client Libraries - language-specific bindings or packages
+   
+   ✔ JSON Wire Protocol & W3C WebDriver protocol
+   	Communication - send it over HTTP to a remote server - HTTP request formatted
+   
+   
+   
+   
+   browser driver / real drivers / 
+
+   
+   
+   
+   
+   Client Library
+   Client
+   Protocol
+   Server
+   Browser
+   
+   
+
+
+  Python, Perl, C#, Java
+  
+  
+  Selenium WebDriver & Remote Execution – Quick Notes
+
+SearchContext → Base interface to locate elements on a page. Provides findElement() / findElements().
+WebDriver → Core interface for browser automation. Extends SearchContext. Controls browser actions.
+RemoteWebDriver → Implements WebDriver for remote/browser grid execution. Can run tests on any machine.
+
+Browser Drivers → Real browser controllers: ChromeDriver, EdgeDriver, FirefoxDriver, SafariDriver.
+Chromium Drivers → ChromeDriver, EdgeDriver (both based on Chromium engine).
+SafariDriver / FirefoxDriver → Native drivers for Safari and Firefox browsers.
+
+RemoteWebDriver Implements:
+
+JavaScriptExecutor → Run JS code in browser dynamically.
+
+TakesScreenshot → Capture browser screenshots for reports/debugging.
+
+Driver Types / Flow:
+
+Browser Driver / Real Drivers → Directly communicate with local browser.
+
+JSON Wire Protocol → HTTP-based protocol to send automation commands.
+
+W3C WebDriver Protocol → Updated standard protocol for commands & responses.
+
+Selenium Client Libraries → Language bindings (Java, Python, C#) to write scripts.
+
+Communication Flow:
+
+Client Library → Your code in Java/Python/etc.
+
+Client → Converts commands into protocol requests (JSON over HTTP).
+
+Protocol → JSON Wire / W3C format defines commands & responses.
+
+Server → RemoteWebDriver / Selenium Grid listens, executes commands.
+
+Browser → Receives commands, executes actions, returns responses.
+
+
+
+	Selenium WebDriver is a client-server architecture designed for browser automation. You write test code using Selenium Client Libraries in a language like Java. This code (the Client) uses the RemoteWebDriver class, which implements the main WebDriver interface (extending the core SearchContext finding abilities). RemoteWebDriver translates your commands into a standardized Protocol (the W3C WebDriver protocol, which replaced the JSON Wire Protocol) and sends them over HTTP to a Server (a Browser Driver like Chrome Driver or Fire Fox Driver). This driver then executes those commands on the Real Driver, the actual Browser (like Chrome). The RemoteWebDriver also implements crucial utility interfaces like JavaScript Executor and Takes Screenshot for advanced operations.
+
+
+
+// ######################################################################################################################################### //
+
+// ✔ Selenium Core
+import org.openqa.selenium.*;                    // WebDriver, WebElement, By, Keys, Alert, OutputType, TakesScreenshot, JavascriptExecutor
+
+tors
+import org.openqa.selenium.Keys;                 // Keyboard actions
+import org.openqa.selenium.Alert;                // Alerts
+import org.openqa.selenium.OutputType;           // Screenshots
+import org.openqa.selenium.TakesScreenshot;      // Screenshots interface
+import org.openqa.selenium.JavascriptExecutor;   // Run JS in browser
+
+// ✔ Selenium actions
+import org.openqa.selenium.interactions.Actions; // Mouse + keyboard actions
+
+// ✔ Selenium drivers & options
+import org.openqa.selenium.chrome.ChromeDriver;  // Chrome driver
+import org.openqa.selenium.chrome.ChromeOptions; // Chrome options/settings
+
+// ✔ WebDriver manager (auto driver binaries)
+import io.github.bonigarcia.wdm.WebDriverManager; // Auto-manage drivers
+
+// ✔ TestNG
+import org.testng.annotations.Test;              // TestNG test
+import org.testng.annotations.BeforeTest;        // Before test block
+import org.testng.annotations.AfterTest;         // After test block
+import org.testng.annotations.BeforeMethod;      // Before each method
+import org.testng.annotations.AfterMethod;       // After each method
+
+// ✔ File handling
+import java.io.File;                             // File class
+import java.io.IOException;                      // IO exceptions
+import org.apache.commons.io.FileUtils;          // Apache commons file utils
+
+// ✔ Time handling
+import java.util.concurrent.TimeUnit;            // Time waits
+
+// ✔ Optional: DesiredCapabilities if needed for advanced settings
+// import org.openqa.selenium.remote.DesiredCapabilities; 
+
+
+
+// ####################################################################################################
+
+
+
+✔ DRIVER METHODS — with PARAMETERS
+
+✔ Basic Navigation
+driver.get(String url)                        
+  // Open URL → driver.get("https://example.com")
+
+driver.getCurrentUrl()                        
+  // Returns current URL → String
+
+driver.getTitle()                             
+  // Returns page title → String
+
+driver.getPageSource()                        
+  // Returns page HTML source → String
+
+driver.close()                                
+  // Close current tab/window
+
+driver.quit()                                 
+  // Quit browser session (all tabs)
+  
+
+✔ Window Management
+driver.manage().window().maximize()           
+  // Maximize window
+
+driver.manage().window().minimize()           
+  // Minimize window
+
+driver.manage().window().fullscreen()         
+  // Fullscreen mode
+
+driver.manage().window().getSize()            
+  // Get window size → Dimension
+
+driver.manage().window().getPosition()        
+  // Get window position → Point
+
+driver.manage().window().setPosition(Point p) 
+  // Set window position → driver.manage().window().setPosition(new Point(x,y))
+  
+  
+✔ Navigation Interface
+driver.navigate().to(String url)              
+  // Navigate to URL → driver.navigate().to("https://example.com")
+
+driver.navigate().forward()                   
+  // Go forward in history
+
+driver.navigate().back()                      
+  // Go back in history
+
+driver.navigate().refresh()                   
+  // Reload page
+  
+
+
+✔ Timeouts
+driver.manage().timeouts().implicitlyWait(Duration duration) 
+  // Set implicit wait → driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10))
+
+
+✔ Cookies
+driver.manage().deleteAllCookies()            
+  // Delete all cookies
+
+
+✔ Window Handles
+driver.getWindowHandle()                      
+  // Get current window handle → String
+
+driver.getWindowHandles()                     
+  // Get all window handles → Set<String>
+
+
+✔ Switch
+driver.switchTo().window(String handle)       
+  // Switch to window by handle
+
+driver.switchTo().alert()                     
+  // Switch to alert → Alert alert = driver.switchTo().alert()
+
+driver.switchTo().frame(int index)            
+  // Switch to frame by index → driver.switchTo().frame(0)
+
+driver.switchTo().frame(String nameOrId)      
+  // Switch to frame by name/ID → driver.switchTo().frame("frameName")
+
+driver.switchTo().frame(WebElement frameElement) 
+  // Switch to frame by element → driver.switchTo().frame(element)
+
+driver.switchTo().parentFrame()               
+  // Switch to parent frame
+
+driver.switchTo().defaultContent()            
+  // Switch to top-level page
+
+
+✔ Find Elements
+driver.findElement(By by)                     
+  // Find single → driver.findElement(By.id("username"))
+
+driver.findElements(By by)                    
+  // Find multiple → List<WebElement> list = driver.findElements(By.tagName("a"))
+
+
+
+// ####################################################################################################
+
+
+✔ WEB ELEMENT METHODS — with PARAMETERS
+
+✔ Basic Info
+element.getText()                            
+  // Get visible text → String
+
+element.getTagName()                         
+  // Get tag name (e.g., input, div) → String
+
+element.getAttribute(String name)            
+  // Get attribute value → element.getAttribute("value")
+
+element.getCssValue(String propertyName)     
+  // Get CSS property → element.getCssValue("color")
+
+
+✔ Actions
+element.click()                              
+  // Click element
+
+element.submit()                             
+  // Submit form
+
+element.sendKeys(CharSequence... keysToSend) 
+  // Type input → element.sendKeys("text")
+
+element.clear()                              
+  // Clear input field
+
+
+✔ State
+element.isDisplayed()                        
+  // Is visible → boolean
+
+element.isEnabled()                          
+  // Is enabled → boolean
+
+element.isSelected()                         
+  // Is selected (checkbox/radio) → boolean
+
+
+✔ Location & Size
+element.getLocation()                        
+  // Get point → Point (x,y)
+
+element.getLocation().getX()                 
+  // Get X → int
+
+element.getLocation().getY()                 
+  // Get Y → int
+
+element.getSize()                            
+  // Get size → Dimension (width,height)
+
+element.getSize().getHeight()                
+  // Get height → int
+
+element.getSize().getWidth()                 
+  // Get width → int
+
+element.getRect()                            
+  // Get full rect → Rectangle (x,y,w,h)
+
+element.getRect().getX()                     
+  // Rect X
+
+element.getRect().getY()                     
+  // Rect Y
+
+element.getRect().getWidth()                 
+  // Rect width
+
+element.getRect().getHeight()                
+  // Rect height
+
+
+✔ Accessibility
+element.getAccessibleName()                  
+  // ARIA accessible name → String
+
+element.getAriaRole()                        
+  // ARIA role → String
+
+
+
+// ####################################################################################################
+
+
+✔ LOCATORS — Selenium
+
+✔ ID
+By.id("loginBtn")              
+  // Locate by id="loginBtn"
+
+✔ Name
+By.name("username")            
+  // Locate by name="username"
+
+✔ Class Name
+By.className("btn-primary")    
+  // Locate by class="btn-primary"
+
+✔ Tag Name
+By.tagName("input")            
+  // Locate by tag <input>
+
+✔ Link Text
+By.linkText("Forgot Password") 
+  // Locate <a> by full visible text
+
+✔ Partial Link Text
+By.partialLinkText("Forgot")   
+  // Locate <a> by partial text
+
+✔ CSS Selector
+By.cssSelector("#loginBtn")    
+  // Locate with CSS selector
+
+✔ XPath
+By.xpath("//input[@id='loginBtn']")  
+  // Locate with XPath
+
+
+
+✔ CSS SELECTORS — Selenium
+
+✔ Basic Tag
+By.cssSelector("input")                 
+  // Any <input>
+
+✔ ID Selector (#)
+By.cssSelector("#loginBtn")             
+  // Element with id="loginBtn"
+
+✔ Class Selector (.)
+By.cssSelector(".btn-primary")          
+  // Element with class="btn-primary"
+
+✔ Attribute Equals
+By.cssSelector("input[type='text']")    
+  // <input type="text">
+
+✔ Multiple Classes
+.btn.primary                            
+  // class="btn primary"
+
+✔ Attribute Starts With (^)
+input[name^='user']                     
+  // name starts with "user" (e.g., username)
+
+✔ Attribute Ends With ($)
+input[name$='name']                     
+  // name ends with "name" (e.g., firstname)
+
+✔ Attribute Contains (*)
+input[name*='pass']                     
+  // name contains "pass" (e.g., password)
+
+✔ Direct Child (>)
+div > p                                  
+  // <p> directly inside <div>
+
+✔ Any Descendant (space)
+div p                                    
+  // Any <p> inside <div> (any level)
+
+✔ Adjacent Sibling (+)
+h1 + p                                   
+  // <p> immediately after <h1>
+
+✔ nth-child()
+ul li:nth-child(2)                       
+  // 2nd <li> in <ul>
+
+
+
+✔ XPATH — Selenium
+
+✔ Absolute Path
+/html/body/div[1]/div[2]/input          
+  // Exact path from root
+
+✔ Attribute Equals
+//input[@id='username']                 
+  // id = "username"
+
+✔ Multiple Attributes AND
+//input[@type='text' and @name='email'] 
+  // type AND name
+
+✔ Multiple Attributes OR
+//button[@id='submit' or @name='loginBtn']  
+  // id OR name
+
+✔ Contains
+//input[contains(@name, 'user')]        
+  // name has "user"
+
+✔ Starts-With
+//input[starts-with(@id, 'user')]       
+  // id starts with "user"
+
+✔ Ends-With
+//input[ends-with(@id, 'user')]         
+  // id ends with "user"
+
+✔ Exact Text
+//a[text()='Login']                     
+  // <a> with text "Login"
+
+✔ Contains Text
+//button[contains(text(), 'Sign')]      
+  // <button> text has "Sign"
+
+✔ Parent Axis
+//input[@id='username']/parent::div     
+  // input’s parent div
+
+✔ Following Sibling
+//label[@for='email']/following-sibling::input  
+  // next <input> after <label>
+
+✔ Preceding Sibling
+//input[@id='email']/preceding-sibling::label    
+  // previous <label> before <input>
+
+✔ Index
+(//input[@type='text'])[2]             
+  // 2nd input with type="text"
+
+
+
+// ####################################################################################################
+
+
+
+✔ ALERTS — Selenium
+
+✔ Switch to Alert
+Alert alert = driver.switchTo().alert();     
+  // Basic switch
+
+✔ Wait for Alert
+Alert alert = wait.until(ExpectedConditions.alertIsPresent());  
+  // Wait until alert appears
+
+✔ Get Text
+alert.getText();                             
+  // Read alert text
+
+✔ Send Keys
+alert.sendKeys("text");                      
+  // Input to prompt
+
+✔ Accept
+alert.accept();                              
+  // Click OK
+
+✔ Dismiss
+alert.dismiss();                             
+  // Click Cancel
+
+
+
+// ####################################################################################################
+
+
+
+✔ JAVA STRING METHODS
+
+✔ Equals
+str1.equals(str2);              
+  // Exact match
+
+✔ Equals Ignore Case
+str1.equalsIgnoreCase(str2);    
+  // Match ignoring case
+
+✔ Length
+str.length();                   
+  // String length
+
+✔ Char At
+str.charAt(0);                  
+  // Get char by index
+
+✔ Substring
+str.substring(1, 4);            
+  // Part of string
+
+✔ Contains
+str.contains("abc");            
+  // Check if present
+
+✔ Replace
+str.replace("old", "new");      
+  // Replace part
+
+✔ Trim
+str.trim();                     
+  // Remove spaces
+
+✔ To Upper Case
+str.toUpperCase();              
+  // Uppercase
+
+✔ To Lower Case
+str.toLowerCase();              
+  // Lowercase
+
+✔ Split
+str.split(",");                 
+  // Split into array
+
+✔ Index Of
+str.indexOf("abc");             
+  // Find position
+
+
+
+// ####################################################################################################
+
+
+
+✔ IMPLICIT WAIT
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  
+  // Global wait for elements
+  
+ 
+✔ EXPLICIT WAIT
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  
+  // Custom wait
+
+wait.until(ExpectedConditions.method(By.locator));  
+  // Until condition true
+  
+  
+ 
+# Exceptions
+
+    ✔ NoSuchElementException - Missing  
+        Element not found in DOM.
+        
+    ✔ NoSuchFrameException - Frame  
+        Frame not found.
+
+    ✔ NoAlertPresentException - Alert  
+        Alert not present when switching.
+
+    ✔ ElementNotVisibleException - Hidden  
+        Element in DOM but not visible.
+
+    ✔ StaleElementReferenceException - Detached  
+        Element no longer attached to DOM.
+
+    ✔ TimeoutException - Delay  
+        Command didn’t finish in specified time.
+
+    ✔ ElementNotSelectableException - Disabled  
+        Element cannot be selected.
+
+    ✔ InvalidSelectorException - XPath/CSS  
+        Selector is invalid.
+
+    ✔ SessionNotFoundException - Closed  
+        Driver session does not exist.
+
+
+
+
+✔ Common Conditions:
+
+wait.until(ExpectedConditions.visibilityOf(element));  
+  // Visible element
+
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("id")));  
+  // Visible by locator
+
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("id")));  
+  // Invisible by locator
+
+wait.until(ExpectedConditions.presenceOfElementLocated(By.id("id")));  
+  // Present in DOM
+
+wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("cls")));  
+  // Multiple present
+
+wait.until(ExpectedConditions.elementToBeClickable(By.id("id")));  
+  // Clickable
+
+wait.until(ExpectedConditions.textToBePresentInElement(element, "text"));  
+  // Text in element
+
+wait.until(ExpectedConditions.textToBePresentInElementLocated(By.id("id"), "text"));  
+  // Text in located element
+
+wait.until(ExpectedConditions.titleIs("Title"));  
+  // Exact title
+
+wait.until(ExpectedConditions.titleContains("Title"));  
+  // Partial title
+
+wait.until(ExpectedConditions.urlToBe("https://url.com"));  
+  // Exact URL
+
+wait.until(ExpectedConditions.urlContains("url-part"));  
+  // Partial URL
+
+wait.until(ExpectedConditions.alertIsPresent());  
+  // Alert exists
+
+wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("frameId")));  
+  // Frame ready + switch
+
+
+✔ FLUENT WAIT
+
+Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+    .withTimeout(Duration.ofSeconds(30))       // Total timeout
+    .pollingEvery(Duration.ofSeconds(2))       // Check every 2s
+    .ignoring(NoSuchElementException.class);   // Ignore exception
+
+
+
+// ####################################################################################################
+
+
+  
+  
+✔ JAVASCRIPT EXECUTOR
+
+✔ SETUP
+JavascriptExecutor js = (JavascriptExecutor) driver;  
+// Cast driver to JS Executor
+
+✔ CLICK
+js.executeScript("arguments[0].click();", hiddenButton);  
+// Click hidden or tricky element
+
+✔ SCROLL INTO VIEW
+js.executeScript("arguments[0].scrollIntoView(true);", element);  
+// Scroll to element
+
+✔ SET VALUE
+js.executeScript("arguments[0].value='SeleniumUser';", input);  
+// Set value in input
+
+✔ DISPATCH EVENT
+js.executeScript("arguments[0].dispatchEvent(new Event('change'));", element);  
+// Trigger event
+
+
+✔ RETURN PAGE DATA
+String title = (String) js.executeScript("return document.title;");  
+// Get page title
+
+String text = (String) js.executeScript("return document.documentElement.innerText;");  
+// Get full text
+
+
+✔ PAGE ACTIONS
+js.executeScript("location.reload();");  
+// Reload page
+
+js.executeScript("arguments[0].disabled = true;", button);  
+// Disable element
+
+js.executeScript("arguments[0].style.border='3px solid red';", button);  
+// Add border for highlight
+
+
+✔ SCROLL BY PIXELS
+js.executeScript("window.scrollBy(0, 300);");  
+// Scroll down 300px
+
+js.executeScript("window.scrollBy(0, -300);");  
+// Scroll up 300px
+
+js.executeScript("window.scrollTo(0, 0);");  
+// Scroll to top
+
+js.executeScript("window.scrollTo(0, document.body.scrollHeight);");  
+// Scroll to bottom
+
+
+✔ CUSTOM SLOW SCROLL (example)
+public static void slowScrollToBottom(WebDriver driver, int step, int delay) throws InterruptedException {
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    long scrollHeight = (Long) js.executeScript("return document.body.scrollHeight");
+    for (int i = 0; i < scrollHeight; i += step) {
+        js.executeScript("window.scrollTo(0, arguments[0]);", i);
+        Thread.sleep(delay);
+    }
+}
+// Scrolls step px every delay ms
+
+
+
+// ####################################################################################################
+
+
+Actions
+
+✔ Setup
+Actions actions = new Actions(driver);
+	// Create Actions object
+
+
+✔ Basic Mouse Actions
+actions.moveToElement(hoverElement)
+       .click(clickElement)
+       .build()
+       .perform();
+	// Hover → Click chain
+
+actions.doubleClick(btn).perform();
+	// Double click
+
+actions.contextClick(box).perform();
+	// Right click
+
+
+✔ Drag & Drop
+actions.dragAndDrop(source, target).perform();
+// Drag from → Drop to
+
+actions.clickAndHold(box)
+       .moveByOffset(100, 0)
+       .release()
+       .perform();
+// Click hold → Move by offset → Release
+
+
+✔ Type & Keys
+actions.click(input)
+       .sendKeys("TestUser")
+       .keyDown(Keys.SHIFT)
+       .sendKeys("abc")
+       .keyUp(Keys.SHIFT)
+       .perform();
+// Click → Type → Press SHIFT → Type → Release SHIFT
+
+
+✔ Keyboard + Mouse Combo
+actions.keyDown(Keys.CONTROL)
+       .keyDown(Keys.SHIFT)
+       .click(link)
+       .keyUp(Keys.CONTROL)
+       .keyUp(Keys.SHIFT)
+       .build()
+       .perform();
+// CTRL + SHIFT + Click → Open link in new tab
+
+
+actions.moveToElement(menu).click().perform();
+// OK for simple
+
+actions.moveToElement(menu).click().build().perform();
+// Same, but clearer when chaining multiple steps
+
+
+
+// ACTIONS
+
+Actions actions = new Actions(driver);
+
+// Clicks
+actions.click().perform();                          // Click current position
+actions.click(element).perform();                   // Click element
+actions.doubleClick().perform();                    // Double click current position
+actions.doubleClick(element).perform();             // Double click element
+actions.contextClick().perform();                   // Right click current position
+actions.contextClick(element).perform();            // Right click element
+
+// Movement
+actions.moveToElement(element).perform();           // Hover element
+actions.moveToElement(element, xOffset, yOffset).perform(); // Hover with offset
+actions.moveByOffset(x, y).perform();               // Move cursor by offset
+
+// Click & Hold
+actions.clickAndHold().perform();                   // Click & hold current position
+actions.clickAndHold(element).perform();            // Click & hold element
+actions.release().perform();                        // Release at current position
+actions.release(element).perform();                 // Release on element
+
+// Drag & Drop
+actions.dragAndDrop(source, target).perform();      // Drag source to target
+actions.dragAndDropBy(source, xOffset, yOffset).perform(); // Drag by offset
+
+// Keyboard
+actions.sendKeys("text").perform();                 // Send keys to active element
+actions.sendKeys(element, "text").perform();        // Send keys to element
+actions.keyDown(Keys.CONTROL).perform();            // Hold CONTROL key
+actions.keyUp(Keys.CONTROL).perform();              // Release CONTROL key
+
+// Others
+actions.pause(Duration.ofSeconds(2)).perform();     // Pause
+actions.build();                                    // Build chain (optional)
+actions.perform();                                  // Run actions
+
+
+// ####################################################################################################
+
+
+
+// SCREENSHOT 
+
+// Import required
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+// Take screenshot
+File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+// Generate timestamp
+String timeStamp = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+
+// File path
+String filePath = "screenshots/" + testName + "-" + timeStamp + ".png";
+
+// Copy file
+FileUtils.copyFile(srcFile, new File(filePath));
+
+
+File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(srcFile, new File('screenshots/fine_name.png'));
+
+
+// ####################################################################################################
+
+
+
+TestNG Methods & Annotations
+
+✔ @BeforeSuite  
+   - Runs once before all tests in the suite.
+   
+✔ @BeforeClass  
+   - Runs before the first @Test in the current class.
+  
+✔ @BeforeMethod  
+   - Runs before each @Test method.
+   
+✔ @BeforeTest  
+   - Runs before any @Test in the <test> tag in testng.xml.
+   
+✔ @Test  
+   - Marks a method as a test case.
+
+✔ @AfterTest  
+   - Runs after all @Test in the <test> tag.
+  
+✔ @AfterMethod  
+   - Runs after each @Test method.
+   
+✔ @AfterClass  
+   - Runs after all @Test in the current class.
+
+✔ @AfterSuite  
+   - Runs once after all tests in the suite.
+
+
+✔ @BeforeGroups  
+   - Runs before the first test method of specified groups.
+
+✔ @AfterGroups  
+   - Runs after all test methods of specified groups.
+   
+
+✔ @Parameters  
+   - Passes values from testng.xml.
+
+✔ @DataProvider  
+   - Supplies multiple sets of data to a @Test.
+
+✔ @Listeners  
+   - Implements ITestListener to track test events.
+   
+
+✔ priority  
+   - Controls execution order of tests.
+
+✔ dependsOnMethods  
+   - Makes a test dependent on another test.
+
+✔ enabled  
+   - Enable/disable test case.
+
+✔ invocationCount  
+   - Runs a test multiple times.
+
+✔ groups  
+   - Categorize tests for selective run.
+
+✔ parallel  
+   - Runs tests/methods/classes in parallel.
+
+✔ Assertions  
+   - HardAssert: Stops on failure.  
+   - SoftAssert: Continues and verifies all.
+
+✔ testng.xml  
+   - Suite config: groups, parameters, parallel, include/exclude tests.
+
+✔ RetryAnalyzer  
+   - Re-run failed tests automatically.
+
+✔ Suite  
+   - Collection of tests defined in testng.xml.
+
+✔ Reporter.log()  
+   - Logs info in reports.
+
+	
+	
+pom.xml
+<dependencies>
+  
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>4.20.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>io.github.bonigarcia</groupId>
+		<artifactId>webdrivermanager</artifactId>
+		<version>5.8.0</version>
+	</dependency>
+
+</dependencies>

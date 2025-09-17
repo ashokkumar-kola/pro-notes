@@ -1,0 +1,123 @@
+This is rentify - home rental application
+platform - React Native CLI - using tsx latest version (react 0.73)
+
+Guide me with instructions, How to make this page consistent
+And finally give me refined tsx code without any comments, perfect flow, order of each line 
+
+
+
+should i not keep in constants, i should keep in only assets 
+which one is fallowed most and prefarable
+
+
+
+
+
+Enhance my Node.js controller and service logic with industry best practices. 
+Give me production ready controllers and service
+Apply proper destructuring, consistent error handling, and clean response formatting. Ensure the following:
+    Use meaningful HTTP status codes (e.g., 200, 201, 400, 401, 422, 500)
+    Validate inputs and include appropriate if-checks
+    Throw informative errors with custom status codes when needed
+    Return responses using a consistent structure: { success, message, data, errors }
+    Use async/await cleanly, avoiding callback-style code
+    Separate business logic into the service layer (controller should only orchestrate)
+    Include try-catch blocks around all async operations
+    The code should be clean, modular, and production-ready
+    
+Apply the above enhancements to my controller-service pattern in a MERN stack backend.
+
+
+
+Format the final response using a reusable utility or helper method
+
+success: false,
+message: 'No users found.',
+data: null,
+errors: null
+
+
+I am learning React JS. For each concept I provide, explain it from beginner to advanced level. Your explanation should:
+    ✅ Follow React best practices (including hooks, component patterns, etc.)
+    📚 Reference the official React documentation where applicable
+    📌 Highlight important points, caveats, and common pitfalls
+    🔄 Show different ways to implement it (e.g., function vs class, hooks variations)
+    ⚠️ Include edge cases and how to handle them
+    🔍 Cover unique or real-world scenarios where the concept applies
+    🚀 Provide production-ready code examples that I can directly reuse
+    ✍️ Be beginner-friendly but build up to advanced usage
+    🧠 Include best practices for performance, maintainability, and scalability
+    
+    
+    
+    
+
+
+I’m building a Rentify property rental mobile application for Android using React Native CLI.
+I will share my page components (screens) with structure and layout.
+
+I want you to:
+	✅ Keep my existing structure and screen logic intact
+	🎨 Apply clean, maintainable styling using StyleSheet, Flexbox, and responsive units
+	💡 Suggest and implement corrections and best practices (naming, component abstraction, layout improvements)
+	📱 Ensure the UI is responsive across devices and uses production-quality design principles
+	🚀 Output the code in JSX format, fully functional and ready to be plugged into a React Native project
+	📦 Follow React Native best practices (e.g., avoid inline styles, separate concerns, accessibility, safe-area-views, etc.)
+	🧱 Suggest reusable components or layout refactors if needed
+	📏 Apply scalable typography and spacing using Dimensions, %, flex, or optional responsive libs
+	🧪 Add helpful inline comments to explain decisions or uncommon techniques
+	
+	
+	
+	
+	
+	
+	
+	
+
+[Stack Navigator]
+Splash 
+
+OnBoarding1
+OnBoarding2
+OnBoarding3
+
+Login
+Register
+
+Home
+
+[Drawer Navigator]
+Profile => EditProfile
+MyProperties => Add Properties
+Wishlist
+
+	
+[Tab Navigator]
+Home Screen
+Filter Screen
+Add Properties Screen
+Wishlist Screen
+Profile Screen
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    
+    
+    
+    
+    
+
